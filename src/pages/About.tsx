@@ -5,12 +5,12 @@ import { ArrowRight, MessageCircle, Sparkles, HeadphonesIcon, Linkedin } from "l
 import logo from "@/assets/J Agents Logo Dark(PNG).png";
 import founderImg from "@/assets/Founder - Zoomed.png";
 
-import threematte1 from "@/assets/About Page/_Close-up_of_three_dark_matte_202605141818 (1).jpeg";
-import threematte2 from "@/assets/About Page/_Close-up_of_three_dark_matte_202605141818.jpeg";
-import macrodark1 from "@/assets/About Page/_Macro_close-up_of_a_dark_202605141818 (1).jpeg";
-import macrodark2 from "@/assets/About Page/_Macro_close-up_of_a_dark_202605141818.jpeg";
-import wideangle1 from "@/assets/About Page/_Wide_angle_close-up_of_a_202605141817 (1).jpeg";
-import wideangle2 from "@/assets/About Page/_Wide_angle_close-up_of_a_202605141817.jpeg";
+import threematte1 from "@/assets/About Page/_Close-up_of_three_dark_matte_202605141818 (1).jpg";
+import threematte2 from "@/assets/About Page/_Close-up_of_three_dark_matte_202605141818.jpg";
+import macrodark1 from "@/assets/About Page/_Macro_close-up_of_a_dark_202605141818 (1).jpg";
+import macrodark2 from "@/assets/About Page/_Macro_close-up_of_a_dark_202605141818.jpg";
+import wideangle1 from "@/assets/About Page/_Wide_angle_close-up_of_a_202605141817 (1).jpg";
+import wideangle2 from "@/assets/About Page/_Wide_angle_close-up_of_a_202605141817.jpg";
 
 const About = () => {
   const navigate = useNavigate();

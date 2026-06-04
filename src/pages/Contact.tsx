@@ -7,12 +7,12 @@ import Layout from "@/components/layout/Layout";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowRight, Check, Linkedin, Instagram, Clock, MessageCircle, ShieldCheck } from "lucide-react";
 
-import office1 from "@/assets/Contact Page/_Close-up_of_a_dark_office_202605141819 (1).jpeg";
-import office2 from "@/assets/Contact Page/_Close-up_of_a_dark_office_202605141819.jpeg";
-import extreme1 from "@/assets/Contact Page/_Extreme_close-up_of_a_dark_202605141819.jpeg";
-import extreme2 from "@/assets/Contact Page/_Extreme_close-up_of_a_dark_202605141820.jpeg";
-import flatlay1 from "@/assets/Contact Page/_Overhead_flat_lay_of_a_202605141821 (1).jpeg";
-import flatlay2 from "@/assets/Contact Page/_Overhead_flat_lay_of_a_202605141821.jpeg";
+import office1 from "@/assets/Contact Page/_Close-up_of_a_dark_office_202605141819 (1).jpg";
+import office2 from "@/assets/Contact Page/_Close-up_of_a_dark_office_202605141819.jpg";
+import extreme1 from "@/assets/Contact Page/_Extreme_close-up_of_a_dark_202605141819.jpg";
+import extreme2 from "@/assets/Contact Page/_Extreme_close-up_of_a_dark_202605141820.jpg";
+import flatlay1 from "@/assets/Contact Page/_Overhead_flat_lay_of_a_202605141821 (1).jpg";
+import flatlay2 from "@/assets/Contact Page/_Overhead_flat_lay_of_a_202605141821.jpg";
 
 const Contact = () => {
   const { toast } = useToast();

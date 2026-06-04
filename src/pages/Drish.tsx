@@ -5,16 +5,16 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import { Sparkles, ArrowRight, LayoutDashboard, Download, Layers, MessageSquareText, ChevronLeft, ChevronRight, Play } from "lucide-react";
 
-import fingers1 from "@/assets/Drish Page/_Close-up_of_a_person's_fingers_202605141814 (1).jpeg";
-import fingers2 from "@/assets/Drish Page/_Close-up_of_a_person's_fingers_202605141814.jpeg";
-import darkobject1 from "@/assets/Drish Page/_Close-up_of_a_single_dark_202605141814 (1).jpeg";
-import darkobject2 from "@/assets/Drish Page/_Close-up_of_a_single_dark_202605141814.jpeg";
-import macbook1 from "@/assets/Drish Page/_Close-up_of_an_open_MacBook_202605141812.jpeg";
-import macbook2 from "@/assets/Drish Page/_Close-up_of_an_open_MacBook_202605141813.jpeg";
-import topdown1 from "@/assets/Drish Page/_Close-up_top-down_shot_of_a_202605141812 (1).jpeg";
-import topdown2 from "@/assets/Drish Page/_Close-up_top-down_shot_of_a_202605141812.jpeg";
-import chocolate1 from "@/assets/Drish Page/_Extreme_close-up_of_dark_chocolate_202605141813 (1).jpeg";
-import chocolate2 from "@/assets/Drish Page/_Extreme_close-up_of_dark_chocolate_202605141813.jpeg";
+import fingers1 from "@/assets/Drish Page/_Close-up_of_a_person's_fingers_202605141814 (1).jpg";
+import fingers2 from "@/assets/Drish Page/_Close-up_of_a_person's_fingers_202605141814.jpg";
+import darkobject1 from "@/assets/Drish Page/_Close-up_of_a_single_dark_202605141814 (1).jpg";
+import darkobject2 from "@/assets/Drish Page/_Close-up_of_a_single_dark_202605141814.jpg";
+import macbook1 from "@/assets/Drish Page/_Close-up_of_an_open_MacBook_202605141812.jpg";
+import macbook2 from "@/assets/Drish Page/_Close-up_of_an_open_MacBook_202605141813.jpg";
+import topdown1 from "@/assets/Drish Page/_Close-up_top-down_shot_of_a_202605141812 (1).jpg";
+import topdown2 from "@/assets/Drish Page/_Close-up_top-down_shot_of_a_202605141812.jpg";
+import chocolate1 from "@/assets/Drish Page/_Extreme_close-up_of_dark_chocolate_202605141813 (1).jpg";
+import chocolate2 from "@/assets/Drish Page/_Extreme_close-up_of_dark_chocolate_202605141813.jpg";
 
 import refImage from "@/assets/Thatha's Tamarind Rice Mix With Reference - Drish Demo/Thatha's Tamarind Rice Mix Reference.jpeg";
 import slide1 from "@/assets/Thatha's Tamarind Rice Mix With Reference - Drish Demo/1_hook.png";

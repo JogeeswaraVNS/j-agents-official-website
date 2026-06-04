@@ -7,16 +7,16 @@ import { ArrowRight, MessageCircle, Check, Zap, Star, Shield, Users, Layers, Pla
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import demoVideo from "@/assets/Chat Assistant Intro Video - Linkedin.mp4";
 
-import darkglass1 from "@/assets/Chat Assistant Page/_Close-up_of_a_dark_glass_202605141810 (1).jpeg";
-import darkglass2 from "@/assets/Chat Assistant Page/_Close-up_of_a_dark_glass_202605141810.jpeg";
-import smartphone1 from "@/assets/Chat Assistant Page/_Close-up_of_a_modern_smartphone_202605141807 (1).jpeg";
-import smartphone2 from "@/assets/Chat Assistant Page/_Close-up_of_a_modern_smartphone_202605141807.jpeg";
-import hand1 from "@/assets/Chat Assistant Page/_Close-up_of_a_person's_hand_202605141811 (1).jpeg";
-import hand2 from "@/assets/Chat Assistant Page/_Close-up_of_a_person's_hand_202605141811.jpeg";
-import mechkeyboard1 from "@/assets/Chat Assistant Page/_Extreme_close-up_of_a_mechanical_202605141808.jpeg";
-import mechkeyboard2 from "@/assets/Chat Assistant Page/_Extreme_close-up_of_a_mechanical_202605141809.jpeg";
-import flatlay1 from "@/assets/Chat Assistant Page/_Overhead_flat_lay_of_a_202605141808.jpeg";
-import flatlay2 from "@/assets/Chat Assistant Page/_Overhead_flat_lay_of_a_202605141809.jpeg";
+import darkglass1 from "@/assets/Chat Assistant Page/_Close-up_of_a_dark_glass_202605141810 (1).jpg";
+import darkglass2 from "@/assets/Chat Assistant Page/_Close-up_of_a_dark_glass_202605141810.jpg";
+import smartphone1 from "@/assets/Chat Assistant Page/_Close-up_of_a_modern_smartphone_202605141807 (1).jpg";
+import smartphone2 from "@/assets/Chat Assistant Page/_Close-up_of_a_modern_smartphone_202605141807.jpg";
+import hand1 from "@/assets/Chat Assistant Page/_Close-up_of_a_person's_hand_202605141811 (1).jpg";
+import hand2 from "@/assets/Chat Assistant Page/_Close-up_of_a_person's_hand_202605141811.jpg";
+import mechkeyboard1 from "@/assets/Chat Assistant Page/_Extreme_close-up_of_a_mechanical_202605141808.jpg";
+import mechkeyboard2 from "@/assets/Chat Assistant Page/_Extreme_close-up_of_a_mechanical_202605141809.jpg";
+import flatlay1 from "@/assets/Chat Assistant Page/_Overhead_flat_lay_of_a_202605141808.jpg";
+import flatlay2 from "@/assets/Chat Assistant Page/_Overhead_flat_lay_of_a_202605141809.jpg";
 
 const whoItsForTags = [
   "Clinics", "Salons", "Coaching Centres", "Professional Businesses", "Retail Shops", "Restaurants",

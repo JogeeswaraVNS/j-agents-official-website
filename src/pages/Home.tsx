@@ -3,16 +3,16 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import { ArrowRight, TrendingDown, Clock, Users } from "lucide-react";
 
-import fiber1 from "@/assets/Home Page/_Close-up_macro_shot_of_fiber_202605141805 (1).jpeg";
-import fiber2 from "@/assets/Home Page/_Close-up_macro_shot_of_fiber_202605141805.jpeg";
-import office1 from "@/assets/Home Page/_Close-up_of_a_glass_office_202605141758.jpeg";
-import office2 from "@/assets/Home Page/_Close-up_of_a_glass_office_202605141759.jpeg";
-import laptops1 from "@/assets/Home Page/_Close-up_of_two_open_laptop_202605141804.jpeg";
-import laptops2 from "@/assets/Home Page/_Close-up_of_two_open_laptop_202605141805.jpeg";
-import businessman1 from "@/assets/Home Page/_Extreme_close-up_of_a_businessman's_202605141759.jpeg";
-import businessman2 from "@/assets/Home Page/_Extreme_close-up_of_a_businessman's_202605141805.jpeg";
-import flatlay1 from "@/assets/Home Page/_Flat_lay_top-down_photo_of_202605141804 (1).jpeg";
-import flatlay2 from "@/assets/Home Page/_Flat_lay_top-down_photo_of_202605141804.jpeg";
+import fiber1 from "@/assets/Home Page/_Close-up_macro_shot_of_fiber_202605141805 (1).jpg";
+import fiber2 from "@/assets/Home Page/_Close-up_macro_shot_of_fiber_202605141805.jpg";
+import office1 from "@/assets/Home Page/_Close-up_of_a_glass_office_202605141758.jpg";
+import office2 from "@/assets/Home Page/_Close-up_of_a_glass_office_202605141759.jpg";
+import laptops1 from "@/assets/Home Page/_Close-up_of_two_open_laptop_202605141804.jpg";
+import laptops2 from "@/assets/Home Page/_Close-up_of_two_open_laptop_202605141805.jpg";
+import businessman1 from "@/assets/Home Page/_Extreme_close-up_of_a_businessman's_202605141759.jpg";
+import businessman2 from "@/assets/Home Page/_Extreme_close-up_of_a_businessman's_202605141805.jpg";
+import flatlay1 from "@/assets/Home Page/_Flat_lay_top-down_photo_of_202605141804 (1).jpg";
+import flatlay2 from "@/assets/Home Page/_Flat_lay_top-down_photo_of_202605141804.jpg";
 
 const Home = () => {
   const scrollToProducts = () => {
