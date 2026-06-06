@@ -2,6 +2,8 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
@@ -11,7 +13,7 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  plugins: [react()],
+  plugins: [react(), cloudflare()],
   envDir: path.resolve(__dirname, "./chat-widget"),
   resolve: {
     alias: {
