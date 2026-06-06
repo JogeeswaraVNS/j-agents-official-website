@@ -18,35 +18,52 @@ const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    lookingFor: "",
+    message: "",
+  });
 
-  const FORMSPREE_FORM_ID = "mykkzlkw";
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    const name = String(data.get("name") || "").trim();
+    const phone = String(data.get("phone") || "").trim();
+
     try {
-      const response = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          _subject: `New contact from ${formData.name}`,
-        }),
-      });
-      if (response.ok) {
-        setIsSubmitted(true);
-        toast({ title: "Message sent", description: "We'll be in touch within 24 hours." });
-      } else {
-        const data = await response.json();
-        throw new Error(data.error || "Failed to send message");
-      }
-    } catch (error) {
+      const payload = {
+        user_id: "1f0f3191-4907-453c-bb1c-92cc05cccf97",
+        name,
+        email: String(data.get("email") || "").trim(),
+        mobile: phone,
+        looking_for: String(data.get("lookingFor") || data.get("interest") || "").trim(),
+        message: String(data.get("message") || "").trim(),
+      };
+
+      const res = await fetch(
+        "https://tpzoeumzxamgtdngcztx.supabase.co/functions/v1/contact-handler",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (!res.ok) throw new Error("Failed to send message");
+
+      setIsSubmitted(true);
+      toast({ title: "Message sent", description: "We'll be in touch within 24 hours." });
+      form.reset();
+    } catch (err) {
       toast({
         title: "Error sending message",
-        description: error instanceof Error ? error.message : "Please try again later.",
+        description: "Failed to send message. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -157,12 +174,13 @@ const Contact = () => {
               <div className="absolute -inset-4 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.03),transparent_70%)] blur-2xl rounded-[3rem] -z-10" />
               <div className="p-6 sm:p-12 backdrop-blur-md bg-white/5 border border-white/10 rounded-3xl sm:rounded-[2.5rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] relative z-10 overflow-hidden hover:border-white/20 transition-all">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/[0.02] rounded-full blur-3xl -mr-16 -mt-16" />
-                
+
                 <div className="rounded-xl overflow-hidden border border-white/10 w-full h-32 mb-8 hidden sm:block">
                   <img src={extreme2} alt="Dark space" className="w-full h-full object-cover opacity-80" />
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
+                  {/* Name */}
                   <div className="space-y-3">
                     <Label htmlFor="name" className="badge-label opacity-80 block ml-1 text-white">Name</Label>
                     <Input
@@ -177,6 +195,7 @@ const Contact = () => {
                     />
                   </div>
 
+                  {/* Email */}
                   <div className="space-y-3">
                     <Label htmlFor="email" className="badge-label opacity-80 block ml-1 text-white">Email</Label>
                     <Input
@@ -191,6 +210,35 @@ const Contact = () => {
                     />
                   </div>
 
+                  {/* Phone */}
+                  <div className="space-y-3">
+                    <Label htmlFor="phone" className="badge-label opacity-80 block ml-1 text-white">Phone</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="+91 98765 43210"
+                      className="h-14 bg-black/50 border-white/10 focus:border-white/30 rounded-2xl text-sm placeholder:text-white/30 text-white transition-all px-6 backdrop-blur-sm"
+                    />
+                  </div>
+
+                  {/* Looking For */}
+                  <div className="space-y-3">
+                    <Label htmlFor="lookingFor" className="badge-label opacity-80 block ml-1 text-white">What are you looking for?</Label>
+                    <Input
+                      id="lookingFor"
+                      name="lookingFor"
+                      type="text"
+                      value={formData.lookingFor}
+                      onChange={handleChange}
+                      placeholder="e.g. Workflow automation, AI agents..."
+                      className="h-14 bg-black/50 border-white/10 focus:border-white/30 rounded-2xl text-sm placeholder:text-white/30 text-white transition-all px-6 backdrop-blur-sm"
+                    />
+                  </div>
+
+                  {/* Message */}
                   <div className="space-y-3">
                     <Label htmlFor="message" className="badge-label opacity-80 block ml-1 text-white">How can we help?</Label>
                     <Textarea
