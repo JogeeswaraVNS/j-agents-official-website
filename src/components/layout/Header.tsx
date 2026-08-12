@@ -55,8 +55,8 @@ const Header = () => {
             to="/"
             className="flex items-center gap-2 text-foreground tracking-tighter hover:opacity-70 transition-all group"
           >
-            <img src={logo} alt="J Agents Logo" className="h-5 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
-            <span className="text-[15px] font-bold">J Agents</span>
+            <img src={logo} alt="JAgents Labs Logo" className="h-5 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
+            <span className="text-[15px] font-bold">JAgents Labs</span>
           </Link>
 
           {/* Desktop Navigation */}

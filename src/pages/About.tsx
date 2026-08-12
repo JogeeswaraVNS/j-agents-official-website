@@ -29,8 +29,8 @@ const About = () => {
             <div className="flex items-center gap-2.5 mb-6">
               <span className="badge-label text-white/80">About</span>
               <span className="inline-flex items-center gap-1.5 text-white normal-case tracking-normal font-semibold backdrop-blur-md bg-white/5 px-2.5 py-1 rounded-full border border-white/10 shadow-sm">
-                <img src={logo} alt="J Agents Logo" className="h-3 w-auto object-contain opacity-80" />
-                <span className="text-[10px] font-bold tracking-tight opacity-90">J Agents</span>
+                <img src={logo} alt="JAgents Labs Logo" className="h-3 w-auto object-contain opacity-80" />
+                <span className="text-[10px] font-bold tracking-tight opacity-90">JAgents Labs</span>
               </span>
             </div>
             <h1 className="leading-[1.1] text-white">
@@ -61,8 +61,8 @@ const About = () => {
               </p>
               <p className="text-white/60 text-lg leading-relaxed flex flex-wrap items-baseline font-medium">
                 <span className="inline-flex items-center gap-1 font-bold text-white mr-1.5 backdrop-blur-md bg-white/10 px-2 py-0.5 rounded-sm border border-white/10">
-                  <img src={logo} alt="J Agents Logo" className="h-2.5 w-auto object-contain self-center opacity-80" />
-                  <span className="text-[11px] tracking-tight text-white/90">J Agents</span>
+                  <img src={logo} alt="JAgents Labs Logo" className="h-2.5 w-auto object-contain self-center opacity-80" />
+                  <span className="text-[11px] tracking-tight text-white/90">JAgents Labs</span>
                 </span>
                 <span>builds AI agent systems that handle this layer so your team can focus on what actually requires human judgment.</span>
               </p>
@@ -184,7 +184,7 @@ const About = () => {
                   Jogeeswara
                 </h2>
                 <p className="text-lg text-white/60 leading-relaxed max-w-xl mb-8 font-medium">
-                  He built J Agents because he saw how much time businesses waste on work that doesn't need a human. His focus is on building AI systems that are practical, fast to deploy, and actually used.
+                  He built JAgents Labs because he saw how much time businesses waste on work that doesn't need a human. His focus is on building AI systems that are practical, fast to deploy, and actually used.
                 </p>
                 <a 
                   href="https://www.linkedin.com/in/jogeeswara-puvvala-85603b24b/" 

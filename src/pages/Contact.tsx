@@ -153,13 +153,18 @@ const Contact = () => {
 
               <div className="pt-10 border-t border-white/10 backdrop-blur-md bg-white/5 p-6 sm:p-10 rounded-[2.5rem] mt-10">
                 <p className="text-sm text-white/60 mb-6 font-medium">
-                  Prefer email?{" "}
-                  <a href="mailto:contact.jagents@gmail.com" className="text-white hover:text-white/80 transition-all underline underline-offset-8 decoration-white/30 hover:decoration-white/80">
-                    contact.jagents@gmail.com
+                  Email us at{" "}
+                  <a href="mailto:hello@jagentslabs.com" className="text-white hover:text-white/80 transition-all underline underline-offset-8 decoration-white/30 hover:decoration-white/80">
+                    hello@jagentslabs.com
+                  </a>
+                  <br /><br />
+                  Call or WhatsApp us at{" "}
+                  <a href="tel:+919063316737" className="text-white hover:text-white/80 transition-all underline underline-offset-8 decoration-white/30 hover:decoration-white/80">
+                    +91 90633 16737
                   </a>
                 </p>
                 <div className="flex gap-4">
-                  <a href="https://www.linkedin.com/company/j-agents/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 bg-white/5 transition-all hover:scale-110 shadow-md" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/company/j-agents-labs/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 bg-white/5 transition-all hover:scale-110 shadow-md" aria-label="LinkedIn">
                     <Linkedin className="h-4 w-4" />
                   </a>
                   <a href="https://www.instagram.com/jagents.ai/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 bg-white/5 transition-all hover:scale-110 shadow-md" aria-label="Instagram">

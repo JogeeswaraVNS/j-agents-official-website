@@ -12,8 +12,8 @@ const Footer = () => {
               to="/"
               className="flex items-center gap-2 text-white/90 tracking-tighter hover:opacity-70 transition-all w-fit group"
             >
-              <img src={logo} alt="J Agents Logo" className="h-5 w-auto object-contain opacity-50 group-hover:opacity-100 transition-opacity" />
-              <span className="text-[14px] font-bold">J Agents</span>
+              <img src={logo} alt="JAgents Labs Logo" className="h-5 w-auto object-contain opacity-50 group-hover:opacity-100 transition-opacity" />
+              <span className="text-[14px] font-bold">JAgents Labs</span>
             </Link>
             <p className="mt-6 text-[13px] text-muted-foreground/40 leading-relaxed max-w-xs font-medium">
               Purpose-built AI agents for real business problems.
@@ -79,16 +79,16 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="mailto:contact.jagents@gmail.com"
+                  href="mailto:hello@jagentslabs.com"
                   className="text-[13px] text-muted-foreground/50 hover:text-white transition-colors font-medium"
                 >
-                  contact.jagents@gmail.com
+                  hello@jagentslabs.com
                 </a>
               </li>
               <li>
                 <div className="flex gap-5 pt-2">
                   <a
-                    href="https://www.linkedin.com/company/j-agents/"
+                    href="https://www.linkedin.com/company/j-agents-labs/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground/30 hover:text-white transition-all hover:scale-110"
@@ -116,8 +116,8 @@ const Footer = () => {
             <div className="flex items-center gap-2 whitespace-nowrap">
               <span>© {new Date().getFullYear()}</span>
               <span className="flex items-center gap-1.5 opacity-40 ml-1">
-                <img src={logo} alt="J Agents Logo" className="h-3 w-auto object-contain grayscale opacity-50" />
-                <span className="whitespace-nowrap">j agents</span>
+                <img src={logo} alt="JAgents Labs Logo" className="h-3 w-auto object-contain grayscale opacity-50" />
+                <span className="whitespace-nowrap">JAgents Labs</span>
               </span>
             </div>
             <div className="flex gap-8 whitespace-nowrap">
