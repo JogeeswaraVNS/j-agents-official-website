@@ -22,7 +22,7 @@ const whoItsForTags = [
   "Clinics", "Salons", "Coaching Centres", "Professional Businesses", "Retail Shops", "Restaurants",
 ];
 
-const Chat = () => {
+const DigitalOffice = () => {
   const videoSectionRef = useRef<HTMLDivElement>(null);
 
 
@@ -56,33 +56,29 @@ const Chat = () => {
           <div className="max-w-4xl mx-auto text-center lg:text-left lg:mx-0 backdrop-blur-md bg-white/5 border border-white/10 p-6 sm:p-10 rounded-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8 animate-fade-in-up">
               <MessageCircle className="w-3.5 h-3.5 text-white/60" />
-              <span className="badge-label text-white/80">AI Chat Assistant Agent</span>
+              <span className="badge-label text-white/80">Digital Office</span>
             </div>
             
             <h1 className="leading-[1.1] animate-fade-in-up text-white" style={{ animationDelay: '200ms' }}>
-              Your business.
-              <span className="block text-white/90 mt-2">Always on.</span>
+              The complete Digital Office bundle
             </h1>
             
             <p className="mt-8 text-lg sm:text-xl text-white/70 leading-relaxed max-w-2xl animate-fade-in-up" style={{ animationDelay: '400ms' }}>
-              We build and install a Chat Assistant on your website that instantly answers customer questions — 24/7, including nights, weekends, and holidays. Never miss a lead again.
+              {/* TODO: content */}
+              A unified solution featuring a modern website, AI chat assistant, and a mini CRM to manage your leads seamlessly.
             </p>
             
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up" style={{ animationDelay: '600ms' }}>
               <Button asChild size="lg" className="btn-refined h-14 px-6 sm:px-10 bg-white text-black hover:bg-white/90 shadow-[0_15px_30px_-10px_rgba(255,255,255,0.2)] transition-all hover:scale-[1.02] active:scale-[0.98]">
                 <Link to="/contact">
-                  Get a Free Consultation
+                  Get started
                   <ArrowRight className="ml-2 h-5 w-5 shrink-0" />
                 </Link>
               </Button>
-              <Button 
-                onClick={() => videoSectionRef.current?.scrollIntoView({ behavior: 'smooth' })}
-                variant="outline" 
-                size="lg" 
-                className="btn-refined h-14 px-6 sm:px-10 border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-white/40 transition-all hover:scale-[1.02] active:scale-[0.98]"
-              >
-                See in Action
-                <Play className="ml-2 h-5 w-5 shrink-0 fill-white/20" />
+              <Button asChild variant="outline" size="lg" className="btn-refined h-14 px-6 sm:px-10 border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-white/40 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                <a href="https://jagentsstudio.com" target="_blank" rel="noopener noreferrer">
+                  Visit Digital Office ↗
+                </a>
               </Button>
             </div>
           </div>
@@ -675,4 +671,4 @@ const Chat = () => {
   );
 };
 
-export default Chat;
+export default DigitalOffice;

@@ -33,10 +33,18 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/chat"
+                  to="/eschure"
                   className="text-[13px] text-muted-foreground/50 hover:text-white transition-colors font-medium"
                 >
-                  Chat Assistant
+                  Eschure
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/digital-office"
+                  className="text-[13px] text-muted-foreground/50 hover:text-white transition-colors font-medium"
+                >
+                  Digital Office
                 </Link>
               </li>
               <li>
@@ -45,6 +53,22 @@ const Footer = () => {
                   className="text-[13px] text-muted-foreground/50 hover:text-white transition-colors font-medium"
                 >
                   Drish
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/custom-software"
+                  className="text-[13px] text-muted-foreground/50 hover:text-white transition-colors font-medium"
+                >
+                  Custom Software
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/approach"
+                  className="text-[13px] text-muted-foreground/50 hover:text-white transition-colors font-medium"
+                >
+                  Approach
                 </Link>
               </li>
               <li>

@@ -7,17 +7,17 @@ import logo from "@/assets/J Agents Logo Dark(PNG).png";
 const Header = () => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [aiAgentsOpen, setAiAgentsOpen] = useState(false);
+  const [whatWeBuildOpen, setWhatWeBuildOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const isActive = (path: string) => location.pathname === path;
-  const isAiAgentsActive = location.pathname === "/chat" || location.pathname === "/drish";
+  const isWhatWeBuildActive = location.pathname === "/eschure" || location.pathname === "/digital-office" || location.pathname === "/drish";
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setAiAgentsOpen(false);
+        setWhatWeBuildOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -38,7 +38,7 @@ const Header = () => {
   // Close mobile menu and dropdown on route change
   useEffect(() => {
     setMobileMenuOpen(false);
-    setAiAgentsOpen(false);
+    setWhatWeBuildOpen(false);
   }, [location.pathname]);
 
   return (
@@ -70,32 +70,42 @@ const Header = () => {
               Home
             </Link>
 
-            {/* AI Agents Dropdown */}
+            {/* What We Build Dropdown */}
             <div className="relative" ref={dropdownRef}>
               <button
-                onClick={() => setAiAgentsOpen(!aiAgentsOpen)}
+                onClick={() => setWhatWeBuildOpen(!whatWeBuildOpen)}
                 className={`text-[13px] font-medium tracking-wide transition-all flex items-center gap-1 ${
-                  isAiAgentsActive ? "text-white" : "text-muted-foreground hover:text-white"
+                  isWhatWeBuildActive ? "text-white" : "text-muted-foreground hover:text-white"
                 }`}
               >
-                AI Agents
-                <ChevronDown className={`h-3 w-3 transition-transform duration-300 ${aiAgentsOpen ? "rotate-180" : ""}`} />
+                What We Build
+                <ChevronDown className={`h-3 w-3 transition-transform duration-300 ${whatWeBuildOpen ? "rotate-180" : ""}`} />
               </button>
-              {aiAgentsOpen && (
+              {whatWeBuildOpen && (
                 <div className="absolute top-full left-0 mt-3 w-52 bg-[#0a0a0a] border border-white/5 rounded-xl shadow-2xl py-2 z-50 overflow-hidden">
                   <Link
-                    to="/chat"
-                    onClick={() => setAiAgentsOpen(false)}
+                    to="/eschure"
+                    onClick={() => setWhatWeBuildOpen(false)}
                     className={`flex flex-col px-4 py-3 transition-colors ${
-                      isActive("/chat") ? "bg-white/5" : "hover:bg-white/5"
+                      isActive("/eschure") ? "bg-white/5" : "hover:bg-white/5"
                     }`}
                   >
-                    <span className="text-[13px] font-bold text-white/90">Chat Assistant</span>
+                    <span className="text-[13px] font-bold text-white/90">Eschure</span>
+                    <span className="text-[11px] text-muted-foreground/50 mt-0.5">Property management</span>
+                  </Link>
+                  <Link
+                    to="/digital-office"
+                    onClick={() => setWhatWeBuildOpen(false)}
+                    className={`flex flex-col px-4 py-3 transition-colors ${
+                      isActive("/digital-office") ? "bg-white/5" : "hover:bg-white/5"
+                    }`}
+                  >
+                    <span className="text-[13px] font-bold text-white/90">Digital Office</span>
                     <span className="text-[11px] text-muted-foreground/50 mt-0.5">24/7 automation</span>
                   </Link>
                   <Link
                     to="/drish"
-                    onClick={() => setAiAgentsOpen(false)}
+                    onClick={() => setWhatWeBuildOpen(false)}
                     className={`flex flex-col px-4 py-3 transition-colors ${
                       isActive("/drish") ? "bg-white/5" : "hover:bg-white/5"
                     }`}
@@ -106,6 +116,24 @@ const Header = () => {
                 </div>
               )}
             </div>
+
+            <Link
+              to="/custom-software"
+              className={`text-[13px] font-medium tracking-wide transition-all ${
+                isActive("/custom-software") ? "text-white" : "text-muted-foreground hover:text-white"
+              }`}
+            >
+              Custom Software
+            </Link>
+
+            <Link
+              to="/approach"
+              className={`text-[13px] font-medium tracking-wide transition-all ${
+                isActive("/approach") ? "text-white" : "text-muted-foreground hover:text-white"
+              }`}
+            >
+              Approach
+            </Link>
 
             <Link
               to="/about"
@@ -158,25 +186,34 @@ const Header = () => {
 
               <div className="px-4 py-3">
                 <button 
-                  onClick={() => setAiAgentsOpen(!aiAgentsOpen)}
+                  onClick={() => setWhatWeBuildOpen(!whatWeBuildOpen)}
                   className="w-full flex items-center justify-between text-muted-foreground hover:text-white transition-colors"
                 >
-                  <span className="badge-label opacity-40">AI Agents</span>
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${aiAgentsOpen ? "rotate-180" : ""}`} />
+                  <span className="badge-label opacity-40">What We Build</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${whatWeBuildOpen ? "rotate-180" : ""}`} />
                 </button>
-                <div className={`flex flex-col gap-2 pl-2 mt-4 overflow-hidden transition-all duration-300 ${aiAgentsOpen ? "max-h-40" : "max-h-0"}`}>
+                <div className={`flex flex-col gap-2 pl-2 mt-4 overflow-hidden transition-all duration-300 ${whatWeBuildOpen ? "max-h-60" : "max-h-0"}`}>
                   <Link
-                    to="/chat"
-                    onClick={() => { setMobileMenuOpen(false); setAiAgentsOpen(false); }}
+                    to="/eschure"
+                    onClick={() => { setMobileMenuOpen(false); setWhatWeBuildOpen(false); }}
                     className={`px-4 py-3 rounded-xl text-[14px] font-medium transition-all ${
-                      isActive("/chat") ? "text-white bg-white/5" : "text-muted-foreground hover:text-white"
+                      isActive("/eschure") ? "text-white bg-white/5" : "text-muted-foreground hover:text-white"
                     }`}
                   >
-                    Chat Assistant
+                    Eschure
+                  </Link>
+                  <Link
+                    to="/digital-office"
+                    onClick={() => { setMobileMenuOpen(false); setWhatWeBuildOpen(false); }}
+                    className={`px-4 py-3 rounded-xl text-[14px] font-medium transition-all ${
+                      isActive("/digital-office") ? "text-white bg-white/5" : "text-muted-foreground hover:text-white"
+                    }`}
+                  >
+                    Digital Office
                   </Link>
                   <Link
                     to="/drish"
-                    onClick={() => { setMobileMenuOpen(false); setAiAgentsOpen(false); }}
+                    onClick={() => { setMobileMenuOpen(false); setWhatWeBuildOpen(false); }}
                     className={`px-4 py-3 rounded-xl text-[14px] font-medium transition-all ${
                       isActive("/drish") ? "text-white bg-white/5" : "text-muted-foreground hover:text-white"
                     }`}
@@ -185,6 +222,26 @@ const Header = () => {
                   </Link>
                 </div>
               </div>
+
+              <Link
+                to="/custom-software"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`px-4 py-3 rounded-xl text-[14px] font-medium transition-all ${
+                  isActive("/custom-software") ? "text-white bg-white/5" : "text-muted-foreground hover:text-white"
+                }`}
+              >
+                Custom Software
+              </Link>
+
+              <Link
+                to="/approach"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`px-4 py-3 rounded-xl text-[14px] font-medium transition-all ${
+                  isActive("/approach") ? "text-white bg-white/5" : "text-muted-foreground hover:text-white"
+                }`}
+              >
+                Approach
+              </Link>
 
               <Link
                 to="/about"

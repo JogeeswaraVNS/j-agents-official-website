@@ -5,8 +5,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
-import Chat from "./pages/Chat";
+import Eschure from "./pages/Eschure";
+import DigitalOffice from "./pages/DigitalOffice";
 import Drish from "./pages/Drish";
+import CustomSoftware from "./pages/CustomSoftware";
+import Approach from "./pages/Approach";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
@@ -25,8 +28,11 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/chat" element={<Chat />} />
+          <Route path="/eschure" element={<Eschure />} />
+          <Route path="/digital-office" element={<DigitalOffice />} />
           <Route path="/drish" element={<Drish />} />
+          <Route path="/custom-software" element={<CustomSoftware />} />
+          <Route path="/approach" element={<Approach />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
