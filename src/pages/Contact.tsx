@@ -5,14 +5,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import Layout from "@/components/layout/Layout";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowRight, Check, Linkedin, Instagram, Clock, MessageCircle, ShieldCheck } from "lucide-react";
+import { ArrowRight, Check, Linkedin, Instagram } from "lucide-react";
 
 import office1 from "@/assets/Contact Page/_Close-up_of_a_dark_office_202605141819 (1).jpg";
 import office2 from "@/assets/Contact Page/_Close-up_of_a_dark_office_202605141819.jpg";
 import extreme1 from "@/assets/Contact Page/_Extreme_close-up_of_a_dark_202605141819.jpg";
 import extreme2 from "@/assets/Contact Page/_Extreme_close-up_of_a_dark_202605141820.jpg";
 import flatlay1 from "@/assets/Contact Page/_Overhead_flat_lay_of_a_202605141821 (1).jpg";
-import flatlay2 from "@/assets/Contact Page/_Overhead_flat_lay_of_a_202605141821.jpg";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -21,7 +20,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
+    company: "",
     lookingFor: "",
     message: "",
   });
@@ -34,15 +33,15 @@ const Contact = () => {
     const data = new FormData(form);
 
     const name = String(data.get("name") || "").trim();
-    const phone = String(data.get("phone") || "").trim();
+    const company = String(data.get("company") || "").trim();
 
     try {
       const payload = {
         user_id: "1f0f3191-4907-453c-bb1c-92cc05cccf97",
         name,
         email: String(data.get("email") || "").trim(),
-        mobile: phone,
-        looking_for: String(data.get("lookingFor") || data.get("interest") || "").trim(),
+        company,
+        looking_for: String(data.get("lookingFor") || "").trim(),
         message: String(data.get("message") || "").trim(),
       };
 
@@ -71,7 +70,7 @@ const Contact = () => {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -94,7 +93,7 @@ const Contact = () => {
                 Thanks for reaching out
               </h1>
               <p className="text-lg text-white/60 font-medium leading-relaxed">
-                We've received your message and will be in touch within 24 hours.
+                We've received your message and will be in touch soon.
               </p>
             </div>
           </div>
@@ -118,11 +117,11 @@ const Contact = () => {
             <div className="space-y-16 animate-fade-in-up">
               <div className="backdrop-blur-md bg-white/5 border border-white/10 p-6 sm:p-10 rounded-[2.5rem]">
                 <p className="badge-label mb-6 text-white/80">Contact</p>
-                <h1 className="leading-[1.1] mb-8 text-white">
-                  Let's talk about your business.
+                <h1 className="leading-[1.1] mb-8 text-white text-4xl lg:text-5xl font-medium tracking-tight">
+                  Tell us what you're working with.
                 </h1>
                 <p className="text-lg text-white/60 leading-relaxed max-w-md font-medium mb-8">
-                  Tell us what you're trying to automate. We'll take it from there.
+                  Whether it's a process that's outgrown your current tools or something you haven't found the right fit for yet, start here.
                 </p>
                 <div className="rounded-xl overflow-hidden border border-white/10 w-full h-40">
                   <img src={extreme1} alt="Office" className="w-full h-full object-cover opacity-80" />
@@ -131,23 +130,11 @@ const Contact = () => {
 
               <div className="backdrop-blur-md bg-white/5 border border-white/10 p-6 sm:p-10 rounded-[2.5rem]">
                 <p className="badge-label mb-8 text-white/80">What to expect</p>
-                <div className="space-y-10">
-                  {[
-                    { icon: Clock, title: "Reply within 24 hours", desc: "We review every message and get back to you the next business day.", img: extreme2 },
-                    { icon: MessageCircle, title: "A short discovery call", desc: "We learn your workflow and what you're trying to improve.", img: flatlay2 },
-                    { icon: ShieldCheck, title: "A clear proposal", desc: "We share exactly how we can help, with honest pricing upfront.", img: flatlay1 },
-                  ].map(item => (
-                    <div key={item.title} className="flex items-start gap-6 group hover:scale-[1.02] transition-all">
-                      <div className="w-12 h-12 bg-white/10 border border-white/20 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:bg-white/20 transition-colors overflow-hidden relative">
-                        <img src={item.img} alt="" className="w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity" />
-                        <item.icon className="h-5 w-5 text-white/90 absolute z-10" />
-                      </div>
-                      <div>
-                        <p className="text-base font-semibold text-white/90 mb-2 group-hover:text-white transition-colors">{item.title}</p>
-                        <p className="text-sm text-white/60 leading-relaxed font-medium">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
+                <div className="space-y-6">
+                  <h2 className="text-xl font-semibold text-white/90">What happens after you reach out</h2>
+                  <p className="text-base text-white/60 leading-relaxed font-medium">
+                    We read every message ourselves. If it's a fit, we'll set up a short call to understand your business before talking about any tool. If it's not a fit, we'll tell you that too.
+                  </p>
                 </div>
               </div>
 
@@ -215,16 +202,17 @@ const Contact = () => {
                     />
                   </div>
 
-                  {/* Phone */}
+                  {/* Company/Brand name */}
                   <div className="space-y-3">
-                    <Label htmlFor="phone" className="badge-label opacity-80 block ml-1 text-white">Phone</Label>
+                    <Label htmlFor="company" className="badge-label opacity-80 block ml-1 text-white">Company/Brand name</Label>
                     <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
+                      id="company"
+                      name="company"
+                      type="text"
+                      required
+                      value={formData.company}
                       onChange={handleChange}
-                      placeholder="+91 98765 43210"
+                      placeholder="Your company or brand"
                       className="h-14 bg-black/50 border-white/10 focus:border-white/30 rounded-2xl text-sm placeholder:text-white/30 text-white transition-all px-6 backdrop-blur-sm"
                     />
                   </div>
@@ -232,27 +220,33 @@ const Contact = () => {
                   {/* Looking For */}
                   <div className="space-y-3">
                     <Label htmlFor="lookingFor" className="badge-label opacity-80 block ml-1 text-white">What are you looking for?</Label>
-                    <Input
+                    <select
                       id="lookingFor"
                       name="lookingFor"
-                      type="text"
+                      required
                       value={formData.lookingFor}
                       onChange={handleChange}
-                      placeholder="e.g. Workflow automation, AI agents..."
-                      className="h-14 bg-black/50 border-white/10 focus:border-white/30 rounded-2xl text-sm placeholder:text-white/30 text-white transition-all px-6 backdrop-blur-sm"
-                    />
+                      className="w-full h-14 bg-black/50 border border-white/10 focus:border-white/30 rounded-2xl text-sm text-white transition-all px-6 backdrop-blur-sm appearance-none outline-none"
+                    >
+                      <option value="" disabled className="text-white/30">Select an option</option>
+                      <option value="Eschure" className="bg-neutral-900 text-white">Eschure</option>
+                      <option value="Digital Office" className="bg-neutral-900 text-white">Digital Office</option>
+                      <option value="Drish" className="bg-neutral-900 text-white">Drish</option>
+                      <option value="Custom Software" className="bg-neutral-900 text-white">Custom Software</option>
+                      <option value="Not sure yet" className="bg-neutral-900 text-white">Not sure yet</option>
+                    </select>
                   </div>
 
                   {/* Message */}
                   <div className="space-y-3">
-                    <Label htmlFor="message" className="badge-label opacity-80 block ml-1 text-white">How can we help?</Label>
+                    <Label htmlFor="message" className="badge-label opacity-80 block ml-1 text-white">Message</Label>
                     <Textarea
                       id="message"
                       name="message"
                       required
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell us about your business and what you'd like to improve..."
+                      placeholder="What's actually happening in your business right now?"
                       className="min-h-[180px] resize-none bg-black/50 border-white/10 focus:border-white/30 rounded-2xl p-6 text-sm leading-relaxed placeholder:text-white/30 text-white transition-all backdrop-blur-sm"
                     />
                   </div>
@@ -262,13 +256,9 @@ const Contact = () => {
                     className="btn-refined w-full h-14 bg-white text-black hover:bg-white/90 shadow-[0_15px_30px_-5px_rgba(255,255,255,0.2)] transition-all hover:scale-[1.02] active:scale-[0.98]"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? "Sending..." : "Send message"}
+                    {isSubmitting ? "Sending..." : "Send it over"}
                     {!isSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
                   </Button>
-
-                  <p className="text-[10px] text-white/40 text-center font-bold tracking-widest uppercase pt-2">
-                    Response time: &lt; 24 Hours
-                  </p>
                 </form>
               </div>
             </div>
