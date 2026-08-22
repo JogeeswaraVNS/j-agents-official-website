@@ -6,7 +6,7 @@ const Privacy = () => {
       <section className="min-h-[80vh] flex items-center justify-center bg-background px-6">
         <div className="max-w-3xl w-full text-left py-24 lg:py-32 mx-auto">
           <h1 className="mb-2 text-center">Privacy Policy</h1>
-          <p className="text-center text-muted-foreground mb-12">Last updated: [insert date]</p>
+          <p className="text-center text-muted-foreground mb-12">Last updated: 13th August 2026</p>
           
           <div className="space-y-10">
             <section>

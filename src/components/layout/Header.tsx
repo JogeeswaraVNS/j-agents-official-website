@@ -9,6 +9,8 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [whatWeBuildOpen, setWhatWeBuildOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const isActive = (path: string) => location.pathname === path;
@@ -21,19 +23,35 @@ const Header = () => {
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
+  useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 10);
+      
+      if (!mobileMenuOpen) {
+        if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
+          setHidden(true);
+        } else if (currentScrollY < lastScrollY.current) {
+          setHidden(false);
+        }
+      } else {
+        setHidden(false);
+      }
+      
+      lastScrollY.current = currentScrollY;
     };
-    // Set initial state
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Initial check
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [mobileMenuOpen]);
 
   // Close mobile menu and dropdown on route change
   useEffect(() => {
@@ -44,6 +62,8 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      } ${
         scrolled
           ? "bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm"
           : "bg-background/95 backdrop-blur-md border-b border-border/30"
