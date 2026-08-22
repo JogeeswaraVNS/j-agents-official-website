@@ -12,21 +12,22 @@ const Footer = () => {
               to="/"
               className="flex items-center gap-2 text-white/90 tracking-tighter hover:opacity-70 transition-all w-fit group"
             >
-              <img src={logo} alt="JAgents Labs Logo" className="h-5 w-auto object-contain opacity-50 group-hover:opacity-100 transition-opacity" />
+              <img src={logo} alt="JAgents Labs Logo" className="h-5 w-auto object-contain opacity-60 group-hover:opacity-100 transition-opacity" />
               <span className="text-[14px] font-bold">JAgents Labs</span>
             </Link>
-            <p className="mt-6 text-[13px] text-muted-foreground/40 leading-relaxed max-w-xs font-medium">
+            <p className="mt-6 text-[13px] leading-relaxed max-w-xs font-medium" style={{ color: "#A1A1AA" }}>
               Purpose-built AI agents for real business problems.
             </p>
           </div>
 
           <div>
-            <h4 className="badge-label mb-8 opacity-30">Navigation</h4>
+            <h4 className="text-[10px] font-medium uppercase tracking-[0.12em] mb-8" style={{ color: "#9CA3AF" }}>Navigation</h4>
             <ul className="space-y-4">
               <li>
                 <Link
                   to="/"
-                  className="text-[13px] text-muted-foreground/50 hover:text-white transition-colors font-medium"
+                  className="text-[13px] font-medium transition-colors hover:text-white"
+                  style={{ color: "#E5E7EB" }}
                 >
                   Home
                 </Link>
@@ -34,7 +35,8 @@ const Footer = () => {
               <li>
                 <Link
                   to="/eschure"
-                  className="text-[13px] text-muted-foreground/50 hover:text-white transition-colors font-medium"
+                  className="text-[13px] font-medium transition-colors hover:text-white"
+                  style={{ color: "#E5E7EB" }}
                 >
                   Eschure
                 </Link>
@@ -42,7 +44,8 @@ const Footer = () => {
               <li>
                 <Link
                   to="/digital-office"
-                  className="text-[13px] text-muted-foreground/50 hover:text-white transition-colors font-medium"
+                  className="text-[13px] font-medium transition-colors hover:text-white"
+                  style={{ color: "#E5E7EB" }}
                 >
                   Digital Office
                 </Link>
@@ -50,7 +53,8 @@ const Footer = () => {
               <li>
                 <Link
                   to="/drish"
-                  className="text-[13px] text-muted-foreground/50 hover:text-white transition-colors font-medium"
+                  className="text-[13px] font-medium transition-colors hover:text-white"
+                  style={{ color: "#E5E7EB" }}
                 >
                   Drish
                 </Link>
@@ -58,7 +62,8 @@ const Footer = () => {
               <li>
                 <Link
                   to="/custom-software"
-                  className="text-[13px] text-muted-foreground/50 hover:text-white transition-colors font-medium"
+                  className="text-[13px] font-medium transition-colors hover:text-white"
+                  style={{ color: "#E5E7EB" }}
                 >
                   Custom Software
                 </Link>
@@ -66,7 +71,8 @@ const Footer = () => {
               <li>
                 <Link
                   to="/approach"
-                  className="text-[13px] text-muted-foreground/50 hover:text-white transition-colors font-medium"
+                  className="text-[13px] font-medium transition-colors hover:text-white"
+                  style={{ color: "#E5E7EB" }}
                 >
                   Approach
                 </Link>
@@ -74,7 +80,8 @@ const Footer = () => {
               <li>
                 <Link
                   to="/about"
-                  className="text-[13px] text-muted-foreground/50 hover:text-white transition-colors font-medium"
+                  className="text-[13px] font-medium transition-colors hover:text-white"
+                  style={{ color: "#E5E7EB" }}
                 >
                   About
                 </Link>
@@ -82,7 +89,8 @@ const Footer = () => {
               <li>
                 <Link
                   to="/privacy"
-                  className="text-[13px] text-muted-foreground/50 hover:text-white transition-colors font-medium"
+                  className="text-[13px] font-medium transition-colors hover:text-white"
+                  style={{ color: "#E5E7EB" }}
                 >
                   Privacy Policy
                 </Link>
@@ -91,12 +99,13 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="badge-label mb-8 opacity-30">Get in touch</h4>
+            <h4 className="text-[10px] font-medium uppercase tracking-[0.12em] mb-8" style={{ color: "#9CA3AF" }}>Get in touch</h4>
             <ul className="space-y-4">
               <li>
                 <Link
                   to="/contact"
-                  className="text-[13px] text-muted-foreground/50 hover:text-white transition-colors font-medium"
+                  className="text-[13px] font-medium transition-colors hover:text-white"
+                  style={{ color: "#E5E7EB" }}
                 >
                   Contact
                 </Link>
@@ -104,7 +113,8 @@ const Footer = () => {
               <li>
                 <a
                   href="mailto:hello@jagentslabs.com"
-                  className="text-[13px] text-muted-foreground/50 hover:text-white transition-colors font-medium"
+                  className="text-[13px] font-medium transition-colors hover:text-white"
+                  style={{ color: "#E5E7EB" }}
                 >
                   hello@jagentslabs.com
                 </a>
@@ -115,7 +125,8 @@ const Footer = () => {
                     href="https://www.linkedin.com/company/j-agents-labs/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground/30 hover:text-white transition-all hover:scale-110"
+                    className="transition-all hover:text-white hover:scale-110"
+                    style={{ color: "#6B7280" }}
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="h-4 w-4" />
@@ -124,7 +135,8 @@ const Footer = () => {
                     href="https://www.instagram.com/jagents.ai/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground/30 hover:text-white transition-all hover:scale-110"
+                    className="transition-all hover:text-white hover:scale-110"
+                    style={{ color: "#6B7280" }}
                     aria-label="Instagram"
                   >
                     <Instagram className="h-4 w-4" />
@@ -135,18 +147,18 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-20 pt-10 border-t border-white/5">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 text-[11px] text-muted-foreground/20 font-bold uppercase tracking-[0.2em]">
+        <div className="mt-20 pt-10" style={{ borderTop: "1px solid #2A2A2E" }}>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 text-[11px] font-bold uppercase tracking-[0.2em]" style={{ color: "#6B7280" }}>
             <div className="flex items-center gap-2 whitespace-nowrap">
               <span>© {new Date().getFullYear()}</span>
-              <span className="flex items-center gap-1.5 opacity-40 ml-1">
-                <img src={logo} alt="JAgents Labs Logo" className="h-3 w-auto object-contain grayscale opacity-50" />
+              <span className="flex items-center gap-1.5 ml-1">
+                <img src={logo} alt="JAgents Labs Logo" className="h-3 w-auto object-contain grayscale opacity-60" />
                 <span className="whitespace-nowrap">JAgents Labs</span>
               </span>
             </div>
             <div className="flex gap-8 whitespace-nowrap">
-              <span className="opacity-30">All Rights Reserved</span>
-              <span className="opacity-30">Premium AI Solutions</span>
+              <span>All Rights Reserved</span>
+              <span>Premium AI Solutions</span>
             </div>
           </div>
         </div>
@@ -156,3 +168,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
