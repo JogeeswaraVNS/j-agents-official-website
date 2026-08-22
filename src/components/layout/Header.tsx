@@ -12,9 +12,26 @@ const Header = () => {
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const isActive = (path: string) => location.pathname === path;
   const isWhatWeBuildActive = location.pathname === "/eschure" || location.pathname === "/digital-office" || location.pathname === "/drish";
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    if (!hidden) {
+      setWhatWeBuildOpen(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setWhatWeBuildOpen(false);
+    }, 150);
+  };
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -23,7 +40,10 @@ const Header = () => {
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
   }, []);
 
   useEffect(() => {
@@ -91,18 +111,30 @@ const Header = () => {
             </Link>
 
             {/* What We Build Dropdown */}
-            <div className="relative" ref={dropdownRef}>
+            <div 
+              className="relative" 
+              ref={dropdownRef}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
               <button
                 onClick={() => setWhatWeBuildOpen(!whatWeBuildOpen)}
+                onFocus={handleMouseEnter}
+                onBlur={handleMouseLeave}
                 className={`text-[13px] font-medium tracking-wide transition-all flex items-center gap-1 ${
                   isWhatWeBuildActive ? "text-white" : "text-muted-foreground hover:text-white"
                 }`}
+                aria-expanded={whatWeBuildOpen}
               >
                 What We Build
                 <ChevronDown className={`h-3 w-3 transition-transform duration-300 ${whatWeBuildOpen ? "rotate-180" : ""}`} />
               </button>
-              {whatWeBuildOpen && (
-                <div className="absolute top-full left-0 mt-3 w-52 bg-[#0a0a0a] border border-white/5 rounded-xl shadow-2xl py-2 z-50 overflow-hidden">
+              
+              <div 
+                className={`absolute top-full left-0 mt-3 w-52 bg-[#0a0a0a] border border-white/5 rounded-xl shadow-2xl py-2 z-50 overflow-hidden transition-all duration-300 origin-top ${
+                  whatWeBuildOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"
+                }`}
+              >
                   <Link
                     to="/eschure"
                     onClick={() => setWhatWeBuildOpen(false)}
@@ -133,8 +165,7 @@ const Header = () => {
                     <span className="text-[13px] font-bold text-white/90">Drish</span>
                     <span className="text-[11px] text-muted-foreground/50 mt-0.5">Content Agent</span>
                   </Link>
-                </div>
-              )}
+              </div>
             </div>
 
             <Link

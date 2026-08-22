@@ -106,14 +106,14 @@ const ProductRow = ({
   const isRight = align === "right";
   return (
     <div className="container mx-auto px-6 lg:px-12 py-24">
-      <div className={`max-w-2xl ${isRight ? "ml-auto text-right" : "mr-auto text-left"}`}>
-        <p className="text-white/50 uppercase tracking-[0.18em] text-xs font-medium mb-5">
+      <div className={`max-w-2xl backdrop-blur-md bg-white/5 border border-white/10 p-8 sm:p-14 rounded-[2.5rem] hover:shadow-lg transition-all ${isRight ? "ml-auto text-right" : "mr-auto text-left"}`}>
+        <p className="badge-label mb-6 text-white/80 inline-block">
           {eyebrow}
         </p>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">
+        <h2 className="leading-snug text-white mb-8 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
           {title}
         </h2>
-        <p className="text-white/75 text-lg sm:text-xl leading-relaxed mb-8 font-light">
+        <p className="text-white/60 text-lg sm:text-xl leading-relaxed font-medium mb-8">
           {body}
         </p>
         <Link
@@ -142,19 +142,19 @@ const Home = () => {
         overlayClass="bg-gradient-to-r from-black/85 via-black/50 to-black/20"
         parallaxAmt={8}
       >
-        <div className="container mx-auto px-6 lg:px-12 py-32">
-          <div className="max-w-3xl text-left">
-            <p className="text-white/50 uppercase tracking-[0.18em] text-xs font-medium mb-6 animate-fade-in-up">
+        <div className="container mx-auto px-6 lg:px-12 py-32 relative z-10">
+          <div className="max-w-3xl text-left backdrop-blur-md bg-white/5 border border-white/10 p-8 sm:p-14 rounded-[2.5rem] animate-fade-in-up">
+            <p className="badge-label mb-6 text-white/80">
               J Agents Labs
             </p>
             <h1
-              className="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-white leading-[1.05] mb-8 animate-fade-in-up"
+              className="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-white leading-[1.05] mb-8"
               style={{ animationDelay: "0.05s" }}
             >
               Built alongside&nbsp;you.
             </h1>
             <p
-              className="text-xl sm:text-2xl text-white/70 leading-relaxed max-w-2xl font-light animate-fade-in-up"
+              className="text-xl sm:text-2xl text-white/60 leading-relaxed max-w-2xl font-medium"
               style={{ animationDelay: "0.15s" }}
             >
               We understand how your business runs before we touch a single line
@@ -172,17 +172,19 @@ const Home = () => {
         overlayClass="bg-gradient-to-b from-black/75 via-black/55 to-black/75"
         parallaxAmt={10}
       >
-        <div className="container mx-auto px-6 lg:px-12 py-24 flex items-center justify-center">
-          <blockquote
-            className="max-w-4xl mx-auto text-center text-2xl sm:text-3xl lg:text-5xl leading-relaxed text-white/95 font-light tracking-wide"
-            style={{
-              fontFamily: "Georgia, Cambria, 'Times New Roman', serif",
-              textShadow: "0 2px 20px rgba(0,0,0,0.9)",
-            }}
-          >
-            "The right software isn't the one with the most features.{" "}
-            <em>It's the one built around how you already work.</em>"
-          </blockquote>
+        <div className="container mx-auto px-6 lg:px-12 py-24 flex items-center justify-center relative z-10">
+          <div className="max-w-4xl mx-auto text-center backdrop-blur-md bg-white/5 border border-white/10 p-8 sm:p-14 rounded-[2.5rem] animate-fade-in-up hover:shadow-lg transition-all">
+            <blockquote
+              className="text-2xl sm:text-3xl lg:text-5xl leading-relaxed text-white/95 font-light tracking-wide"
+              style={{
+                fontFamily: "Georgia, Cambria, 'Times New Roman', serif",
+                textShadow: "0 2px 20px rgba(0,0,0,0.9)",
+              }}
+            >
+              "The right software isn't the one with the most features.{" "}
+              <em>It's the one built around how you already work.</em>"
+            </blockquote>
+          </div>
         </div>
       </ParallaxSection>
 
@@ -266,15 +268,15 @@ const Home = () => {
         overlayClass="bg-gradient-to-b from-black/60 via-black/30 to-black/85"
         parallaxAmt={10}
       >
-        <div className="container mx-auto px-6 lg:px-12 py-28 flex items-end">
-          <div className="max-w-2xl">
-            <p className="text-white/50 uppercase tracking-[0.18em] text-xs font-medium mb-4">
+        <div className="container mx-auto px-6 lg:px-12 py-28 flex items-end relative z-10">
+          <div className="max-w-2xl text-left backdrop-blur-md bg-white/5 border border-white/10 p-8 sm:p-14 rounded-[2.5rem]">
+            <p className="badge-label mb-6 text-white/80 inline-block">
               Our approach
             </p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
+            <h2 className="leading-snug text-white mb-8 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
               We diagnose before we build.
             </h2>
-            <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-8 font-light">
+            <p className="text-white/60 text-lg sm:text-xl leading-relaxed font-medium mb-8">
               Before we recommend a tool, we look at where your process actually
               breaks. That's the difference between software you adopt and
               software you fight.
@@ -298,15 +300,15 @@ const Home = () => {
         overlayClass="bg-gradient-to-b from-black/60 via-black/30 to-black/85"
         parallaxAmt={10}
       >
-        <div className="container mx-auto px-6 lg:px-12 py-28 flex items-end justify-end">
-          <div className="max-w-2xl text-right">
-            <p className="text-white/50 uppercase tracking-[0.18em] text-xs font-medium mb-4">
+        <div className="container mx-auto px-6 lg:px-12 py-28 flex items-end justify-end relative z-10">
+          <div className="max-w-2xl text-right backdrop-blur-md bg-white/5 border border-white/10 p-8 sm:p-14 rounded-[2.5rem]">
+            <p className="badge-label mb-6 text-white/80 inline-block">
               Who we are
             </p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
+            <h2 className="leading-snug text-white mb-8 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
               Built by people who've run the problem.
             </h2>
-            <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-8 font-light">
+            <p className="text-white/60 text-lg sm:text-xl leading-relaxed font-medium mb-8">
               J Agents Labs closes the gap between a good idea and software that
               holds up in production. Meet the studio.
             </p>
@@ -329,24 +331,26 @@ const Home = () => {
         overlayClass="bg-gradient-to-b from-black/65 via-black/40 to-black/75"
         parallaxAmt={8}
       >
-        <div className="container mx-auto px-6 lg:px-12 py-28 flex flex-col items-center justify-center text-center">
-          <p className="text-white/50 uppercase tracking-[0.18em] text-xs font-medium mb-6">
-            Let's talk
-          </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-tight max-w-4xl">
-            Partner with people who understand your business first.
-          </h2>
-          <p className="text-xl sm:text-2xl text-white/75 font-light mb-12 max-w-2xl leading-relaxed">
-            Tell us what's actually happening in your business. We'll tell you
-            honestly whether we're the right people to fix it.
-          </p>
-          <Button
-            asChild
-            size="lg"
-            className="h-14 px-10 bg-white text-black hover:bg-white/90 font-semibold text-base rounded-none transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl tracking-wide"
-          >
-            <Link to="/contact">Get started</Link>
-          </Button>
+        <div className="container mx-auto px-6 lg:px-12 py-28 flex flex-col items-center justify-center text-center relative z-10">
+          <div className="max-w-3xl mx-auto text-center backdrop-blur-md bg-white/5 border border-white/10 p-8 sm:p-14 rounded-[2.5rem] animate-fade-in-up hover:scale-[1.02] transition-all hover:shadow-lg flex flex-col items-center">
+            <p className="badge-label mb-6 text-white/80">
+              Let's talk
+            </p>
+            <h2 className="leading-snug text-white mb-8 text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight">
+              Partner with people who understand your business first.
+            </h2>
+            <p className="text-white/60 text-lg sm:text-xl leading-relaxed font-medium mb-12 max-w-2xl">
+              Tell us what's actually happening in your business. We'll tell you
+              honestly whether we're the right people to fix it.
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="btn-refined h-14 px-6 sm:px-10 bg-white text-black hover:bg-white/90 shadow-[0_15px_30px_-5px_rgba(255,255,255,0.2)] transition-all hover:scale-[1.02]"
+            >
+              <Link to="/contact">Get started<ArrowRight className="ml-2 h-5 w-5 shrink-0" /></Link>
+            </Button>
+          </div>
         </div>
       </ParallaxSection>
 
