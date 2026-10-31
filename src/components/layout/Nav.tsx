@@ -15,13 +15,20 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-40 w-full bg-bg/90 backdrop-blur-md border-b border-border">
       <div className="max-w-content mx-auto px-6 sm:px-12 lg:px-20 h-16 sm:h-20 flex items-center justify-between">
-        {/* Wordmark */}
+        {/* Brand / Logo */}
         <Link
           to="/"
-          className="text-[18px] sm:text-[20px] font-semibold text-text-primary tracking-tight hover:opacity-85 transition-opacity"
+          className="flex items-center gap-3 text-[18px] sm:text-[20px] font-semibold text-text-primary tracking-tight hover:opacity-85 transition-opacity"
           aria-label="JAgents Labs Homepage"
         >
-          JAgents Labs
+          <img
+            src="/jagentslabs-mark.png"
+            alt="JAgents Labs Logo"
+            className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
+            width="32"
+            height="32"
+          />
+          <span>JAgents Labs</span>
         </Link>
 
         {/* Desktop Navigation */}

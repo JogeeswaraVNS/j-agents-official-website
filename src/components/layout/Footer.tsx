@@ -18,9 +18,16 @@ export function Footer() {
           <div className="space-y-4">
             <Link
               to="/"
-              className="text-[18px] font-semibold text-text-primary tracking-tight block"
+              className="flex items-center gap-3 text-[18px] font-semibold text-text-primary tracking-tight"
             >
-              JAgents Labs
+              <img
+                src="/jagentslabs-mark.png"
+                alt="JAgents Labs Logo"
+                className="w-7 h-7 object-contain"
+                width="28"
+                height="28"
+              />
+              <span>JAgents Labs</span>
             </Link>
             <p className="type-caption text-text-secondary leading-relaxed">
               Software built around how you actually work.
