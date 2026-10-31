@@ -28,8 +28,9 @@ export function SectionBackground({
         src={src}
         alt=""
         aria-hidden="true"
-        loading="lazy"
-        decoding="async"
+        loading={loading}
+        decoding={decoding}
+        {...(fetchPriority ? { fetchPriority } : {})}
         width={1672}
         height={941}
         onError={() => setHasError(true)}

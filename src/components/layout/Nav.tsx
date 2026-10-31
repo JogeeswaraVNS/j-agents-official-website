@@ -14,7 +14,7 @@ export function Nav() {
 
   return (
     <header className="sticky top-0 z-40 w-full bg-bg/90 backdrop-blur-md border-b border-border">
-      <div className="max-w-content mx-auto px-6 sm:px-12 lg:px-20 h-16 sm:h-20 flex items-center justify-between">
+      <div className="w-full px-6 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
         {/* Brand / Logo */}
         <Link
           to="/"
@@ -52,53 +52,65 @@ export function Nav() {
           })}
         </nav>
 
-        {/* Mobile menu button */}
+        {/* Mobile Menu Button */}
         <button
           type="button"
-          className="md:hidden inline-flex items-center justify-center min-w-touch min-h-touch p-2 text-text-secondary hover:text-text-primary rounded-btn"
-          aria-expanded={mobileMenuOpen}
-          aria-label="Toggle navigation menu"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-2 text-text-secondary hover:text-text-primary focus:outline-none focus:ring-2 focus:ring-accent rounded-btn"
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-menu"
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
           <svg
             className="w-6 h-6"
             fill="none"
-            stroke="currentColor"
             viewBox="0 0 24 24"
+            stroke="currentColor"
             aria-hidden="true"
           >
             {mobileMenuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             )}
           </svg>
         </button>
       </div>
 
-      {/* Mobile menu dropdown */}
+      {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-border bg-surface px-6 py-6 space-y-4">
-          <nav className="flex flex-col space-y-3" aria-label="Mobile Navigation">
-            {navLinks.map((link) => {
-              const isActive = location.pathname === link.to;
-              return (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`type-caption min-h-touch flex items-center px-2 rounded-btn ${
-                    isActive
-                      ? "text-text-primary font-medium bg-white/5"
-                      : "text-text-secondary hover:text-text-primary"
-                  }`}
-                  aria-current={isActive ? "page" : undefined}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </nav>
+        <div
+          id="mobile-menu"
+          className="md:hidden border-b border-border bg-bg/95 backdrop-blur-md px-6 py-4 space-y-3"
+        >
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.to;
+            return (
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block py-2 text-[16px] transition-colors ${
+                  isActive
+                    ? "text-text-primary font-medium"
+                    : "text-text-secondary hover:text-text-primary"
+                }`}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
       )}
     </header>
