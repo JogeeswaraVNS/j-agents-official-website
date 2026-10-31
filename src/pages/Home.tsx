@@ -4,16 +4,17 @@ import { Layout } from "../components/layout/Layout";
 import { SEO } from "../components/layout/SEO";
 import { LinkButton } from "../components/ui/Button";
 import { SectionBackground } from "../components/ui/SectionBackground";
+import { ExternalArrow } from "../components/ui/Icons";
 
 export default function Home() {
-  const glassSection =
-    "backdrop-blur-md bg-[#0B0B0C]/45 border border-white/[0.08] shadow-2xl rounded-3xl p-8 sm:p-12 md:p-16 transition-all duration-300 ease-out hover:scale-105 hover:bg-[#0B0B0C]/60 hover:border-white/[0.2] hover:shadow-[0_25px_60px_rgba(0,0,0,0.6)] will-change-transform max-w-3xl";
-
   const btnScale =
     "transition-all duration-300 ease-out hover:scale-105 active:scale-95 will-change-transform hover:shadow-[0_10px_25px_rgba(91,139,196,0.3)]";
 
   const linkScale =
     "transition-all duration-300 ease-out hover:scale-105 active:scale-95 will-change-transform inline-block";
+
+  // Content column: constrained width, no panel/box/border/shadow
+  const contentCol = "w-full max-w-[600px] md:max-w-[52%]";
 
   return (
     <Layout>
@@ -23,20 +24,54 @@ export default function Home() {
         canonicalPath="/"
       />
 
-      {/* SECTION 1: HERO */}
-      <section className="relative isolate overflow-hidden">
+      {/* SECTION 1: HERO
+          Mobile: image hidden (plain bg), stacked text, normal padding.
+          Desktop: image right half, solid bg left, content column left.
+          Height: 100svh minus nav (h-16 mobile / h-20 desktop), centred vertically. */}
+      <section
+        className="relative isolate overflow-hidden flex flex-col justify-center
+          min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)]"
+      >
+        {/* Mobile image band — shown only below md */}
+        <div className="md:hidden w-full h-56 overflow-hidden" aria-hidden="true">
+          <img
+            src="/home/1.webp"
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+            decoding="sync"
+            fetchPriority="high"
+            width={1672}
+            height={941}
+            className="w-full h-full object-cover object-center"
+          />
+          {/* bottom fade: image into page bg */}
+          <div
+            className="absolute left-0 right-0 h-20"
+            style={{
+              top: "calc(14rem - 1px)",
+              background: "linear-gradient(to bottom, transparent, #0B0B0C)",
+            }}
+          />
+        </div>
+
+        {/* Desktop background via SectionBackground (image + fades) */}
         <SectionBackground
           src="/home/1.webp"
           loading="eager"
           decoding="sync"
           fetchPriority="high"
         />
-        <div className="w-full px-6 sm:px-8 py-20 sm:py-32">
-          <div className={`${glassSection} animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both`}>
-            <h1 className="text-[40px] sm:text-[64px] font-semibold leading-[1.1] tracking-[-0.02em] text-white mb-6">
+
+        <div className="w-full px-6 sm:px-8 py-12 sm:py-16 md:py-24">
+          <div className={`${contentCol} animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both`}>
+            <h1
+              className="text-[40px] sm:text-[56px] md:text-[64px] font-semibold leading-[1.1] tracking-[-0.02em] text-white mb-6"
+              style={{ textWrap: "balance" } as React.CSSProperties}
+            >
               AI agents and software for real estate.
             </h1>
-            <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/90 mb-10 max-w-2xl">
+            <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/90 mb-10 max-w-xl">
               We build AI agents and software that take over repetitive work, remove delays and give real estate teams their time back. It starts with Eschure, a live copilot for property brokers.
             </p>
             <div className="flex flex-wrap items-center gap-6">
@@ -53,9 +88,10 @@ export default function Home() {
                 href="https://jagentsstudio.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-[16px] font-normal text-[#A1A1AA] hover:text-white inline-flex items-center min-h-[44px] ${linkScale}`}
+                className={`group text-[16px] font-normal text-[#A1A1AA] hover:text-white inline-flex items-center gap-1 min-h-[44px] ${linkScale}`}
               >
                 JAgents Studio
+                <ExternalArrow className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-opacity" />
               </a>
             </div>
           </div>
@@ -64,26 +100,53 @@ export default function Home() {
 
       {/* SECTION 2: ESCHURE */}
       <section className="relative isolate overflow-hidden border-t border-white/[0.07]">
+        {/* Mobile image band */}
+        <div className="md:hidden w-full h-48 overflow-hidden" aria-hidden="true">
+          <img
+            src="/home/2.webp"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            width={1672}
+            height={941}
+            className="w-full h-full object-cover object-center"
+          />
+          <div
+            className="absolute left-0 right-0 h-16"
+            style={{
+              top: "calc(48rem - 1px)",
+              background: "linear-gradient(to bottom, transparent, #0B0B0C)",
+            }}
+          />
+        </div>
+
         <SectionBackground
           src="/home/2.webp"
           loading="lazy"
           decoding="async"
         />
         <div className="w-full px-6 sm:px-8 py-20 sm:py-32">
-          <div className={`${glassSection} animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both`}>
+          <div className={`${contentCol} animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both`}>
             <p className="text-[14px] font-normal leading-[1.5] text-[#A1A1AA] uppercase tracking-wider mb-4">
               Eschure
             </p>
-            <h2 className="text-[32px] sm:text-[40px] font-semibold leading-[1.2] tracking-[-0.015em] text-white mb-6">
+            <h2
+              className="text-[32px] sm:text-[40px] font-semibold leading-[1.2] tracking-[-0.015em] text-white mb-6"
+              style={{ textWrap: "balance" } as React.CSSProperties}
+            >
               The answer is ready before the buyer finishes the sentence.
             </h2>
-            <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/90 mb-10 max-w-2xl">
+            <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/90 mb-10 max-w-xl">
               Eschure is a live copilot for property brokers. During a buyer call, it searches your private inventory by meaning and tells you what fits.
             </p>
 
-            <div className="space-y-6 mb-8 max-w-2xl">
+            <div className="space-y-6 mb-8 max-w-xl">
               <div>
-                <h3 className="text-[20px] sm:text-[24px] font-semibold leading-[1.3] tracking-[-0.01em] text-white mb-2">
+                <h3
+                  className="text-[20px] sm:text-[24px] font-semibold leading-[1.3] tracking-[-0.01em] text-white mb-2"
+                  style={{ textWrap: "balance" } as React.CSSProperties}
+                >
                   Honest matches.
                 </h3>
                 <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/80">
@@ -92,7 +155,10 @@ export default function Home() {
               </div>
 
               <div>
-                <h3 className="text-[20px] sm:text-[24px] font-semibold leading-[1.3] tracking-[-0.01em] text-white mb-2">
+                <h3
+                  className="text-[20px] sm:text-[24px] font-semibold leading-[1.3] tracking-[-0.01em] text-white mb-2"
+                  style={{ textWrap: "balance" } as React.CSSProperties}
+                >
                   The whole call in context.
                 </h3>
                 <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/80">
@@ -101,7 +167,10 @@ export default function Home() {
               </div>
 
               <div>
-                <h3 className="text-[20px] sm:text-[24px] font-semibold leading-[1.3] tracking-[-0.01em] text-white mb-2">
+                <h3
+                  className="text-[20px] sm:text-[24px] font-semibold leading-[1.3] tracking-[-0.01em] text-white mb-2"
+                  style={{ textWrap: "balance" } as React.CSSProperties}
+                >
                   Done when the call ends.
                 </h3>
                 <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/80">
@@ -131,20 +200,44 @@ export default function Home() {
 
       {/* SECTION 3: JAGENTS STUDIO */}
       <section className="relative isolate overflow-hidden border-t border-white/[0.07]">
+        {/* Mobile image band */}
+        <div className="md:hidden w-full h-48 overflow-hidden" aria-hidden="true">
+          <img
+            src="/home/3.webp"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            width={1672}
+            height={941}
+            className="w-full h-full object-cover object-center"
+          />
+          <div
+            className="absolute left-0 right-0 h-16"
+            style={{
+              top: "calc(48rem - 1px)",
+              background: "linear-gradient(to bottom, transparent, #0B0B0C)",
+            }}
+          />
+        </div>
+
         <SectionBackground
           src="/home/3.webp"
           loading="lazy"
           decoding="async"
         />
         <div className="w-full px-6 sm:px-8 py-20 sm:py-32">
-          <div className={`${glassSection} animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both`}>
+          <div className={`${contentCol} animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both`}>
             <p className="text-[14px] font-normal leading-[1.5] text-[#A1A1AA] uppercase tracking-wider mb-4">
               JAgents Studio
             </p>
-            <h2 className="text-[32px] sm:text-[40px] font-semibold leading-[1.2] tracking-[-0.015em] text-white mb-6">
+            <h2
+              className="text-[32px] sm:text-[40px] font-semibold leading-[1.2] tracking-[-0.015em] text-white mb-6"
+              style={{ textWrap: "balance" } as React.CSSProperties}
+            >
               Software and AI agents, built around your business.
             </h2>
-            <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/90 mb-10 max-w-2xl">
+            <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/90 mb-10 max-w-xl">
               From CRMs to operations software, we build systems that automate repetitive work and connect to the tools your team already uses.
             </p>
             <div>
@@ -164,17 +257,41 @@ export default function Home() {
 
       {/* SECTION 4: ONE INDUSTRY */}
       <section className="relative isolate overflow-hidden border-t border-white/[0.07]">
+        {/* Mobile image band */}
+        <div className="md:hidden w-full h-48 overflow-hidden" aria-hidden="true">
+          <img
+            src="/home/4.webp"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            width={1672}
+            height={941}
+            className="w-full h-full object-cover object-center"
+          />
+          <div
+            className="absolute left-0 right-0 h-16"
+            style={{
+              top: "calc(48rem - 1px)",
+              background: "linear-gradient(to bottom, transparent, #0B0B0C)",
+            }}
+          />
+        </div>
+
         <SectionBackground
           src="/home/4.webp"
           loading="lazy"
           decoding="async"
         />
         <div className="w-full px-6 sm:px-8 py-20 sm:py-32">
-          <div className={`${glassSection} animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both`}>
-            <h2 className="text-[32px] sm:text-[40px] font-semibold leading-[1.2] tracking-[-0.015em] text-white mb-6">
+          <div className={`${contentCol} animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both`}>
+            <h2
+              className="text-[32px] sm:text-[40px] font-semibold leading-[1.2] tracking-[-0.015em] text-white mb-6"
+              style={{ textWrap: "balance" } as React.CSSProperties}
+            >
               Where AI agents meet real estate.
             </h2>
-            <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/90 mb-10 max-w-2xl">
+            <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/90 mb-10 max-w-xl">
               Real estate runs on calls, listings, WhatsApp and follow-ups. We put AI agents into that work, so less time goes to repetition and delay, and more goes to the person in front of you.
             </p>
             <div className="flex flex-wrap items-center gap-6">
