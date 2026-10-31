@@ -30,7 +30,7 @@ export function Footer() {
               <span>JAgents Labs</span>
             </Link>
             <p className="type-caption text-text-secondary leading-relaxed">
-              Software built around how you actually work.
+              AI for real estate.
             </p>
           </div>
 
