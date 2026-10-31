@@ -1,102 +1,94 @@
-import Layout from "@/components/layout/Layout";
+import React from "react";
+import { Layout } from "../components/layout/Layout";
+import { SEO } from "../components/layout/SEO";
 
-const Privacy = () => {
+export default function Privacy() {
   return (
     <Layout>
-      <section className="min-h-[80vh] flex items-center justify-center bg-background px-6">
-        <div className="max-w-3xl w-full text-left py-24 lg:py-32 mx-auto">
-          <h1 className="mb-2 text-center">Privacy Policy</h1>
-          <p className="text-center text-muted-foreground mb-12">Last updated: 13th August 2026</p>
-          
-          <div className="space-y-10">
-            <section>
-              <h3 className="text-foreground mb-3">1. Who we are</h3>
-              <p>
-                J Agents Labs ("we," "us," "our") is the data fiduciary responsible for the personal data collected through jagentslabs.com, as defined under India's Digital Personal Data Protection Act, 2023 (DPDP Act). Our registered address and contact details are listed in Section 9 below.
-              </p>
-            </section>
+      <SEO
+        title="Privacy Policy — JAgents Labs"
+        description="Privacy policy for JAgents Labs Private Limited and the jagentslabs.com website."
+        canonicalPath="/privacy"
+      />
 
-            <section>
-              <h3 className="text-foreground mb-3">2. Personal data we collect</h3>
-              <p className="mb-3">We only collect what's needed to respond to you:</p>
-              <ul className="list-disc pl-6 space-y-2 text-[15px] sm:text-[16px] leading-[1.65] text-foreground/75">
-                <li>Contact form: name, email address, company or brand name, and the message you send</li>
-                <li>Drish early access form: name, brand name, email address, and Instagram handle (optional)</li>
-                <li>Basic technical data collected automatically when you visit (browser type, device type, general location, pages viewed), used only for site analytics</li>
-              </ul>
-            </section>
+      <section className="max-w-content mx-auto px-6 sm:px-12 lg:px-20 py-16 sm:py-24">
+        {/* Draft Notice */}
+        <div className="p-4 mb-8 rounded-card border border-accent/40 bg-accent/10 text-text-primary type-caption">
+          <strong>Draft Notice:</strong> This policy is currently drafted specifically for jagentslabs.com and is pending final legal sign-off prior to production release.
+        </div>
 
-            <section>
-              <h3 className="text-foreground mb-3">3. Why we collect it</h3>
-              <ul className="list-disc pl-6 space-y-2 mb-3 text-[15px] sm:text-[16px] leading-[1.65] text-foreground/75">
-                <li>To respond to inquiries submitted through our contact and early access forms</li>
-                <li>To assess whether one of our products fits what you're looking for</li>
-                <li>To improve this website</li>
-              </ul>
-              <p>We do not use your data for any purpose beyond what you've submitted it for, and we do not sell it to third parties.</p>
-            </section>
+        <div className="max-w-3xl mb-12">
+          <h1 className="type-heading text-text-primary mb-3">Privacy Policy</h1>
+          <p className="type-caption text-text-secondary">Last updated: October 2026</p>
+        </div>
 
-            <section>
-              <h3 className="text-foreground mb-3">4. Consent</h3>
-              <p>
-                By submitting a form on this site, you consent to us processing the information you've provided for the purposes listed above. You can withdraw this consent at any time by contacting us (Section 9); withdrawing consent will not affect processing already carried out before your request.
-              </p>
-            </section>
+        <div className="space-y-12 max-w-3xl border-t border-border pt-10 text-text-secondary type-body">
+          <section className="space-y-3">
+            <h2 className="type-subheading text-text-primary">1. Data Fiduciary</h2>
+            <p>
+              JAgents Labs Private Limited ("we", "us", or "our") is the data fiduciary responsible for personal data processed through <strong className="text-text-primary">jagentslabs.com</strong>.
+            </p>
+            <p className="type-caption">
+              Registered Office: H.No. 6-3-1093/406, V V Vintage Boulevard, Somajiguda, Nampally, Hyderabad – 500082, Telangana, India.<br />
+              Email: hello@jagentslabs.com · Phone: +91 90633 16737
+            </p>
+          </section>
 
-            <section>
-              <h3 className="text-foreground mb-3">5. Data sharing</h3>
-              <p>
-                We do not share your personal data with third parties, except where necessary to operate our services (such as email delivery for form submissions) or where required by Indian law.
-              </p>
-            </section>
+          <section className="space-y-3">
+            <h2 className="type-subheading text-text-primary">2. Informational Scope & Minimal Data Collection</h2>
+            <p>
+              This website serves exclusively as an informational showcase for JAgents Labs. We operate under a principle of strict data minimization:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 type-body">
+              <li>We do not provide interactive contact forms or data submission fields on this site.</li>
+              <li>We do not require user account registration, passwords, or profile logins.</li>
+              <li>We do not execute tracking advertising pixels, analytics tracking cookies, or profiling scripts.</li>
+              <li>We do not process billing, financial transactions, or credit card details on this website.</li>
+            </ul>
+          </section>
 
-            <section>
-              <h3 className="text-foreground mb-3">6. Data retention</h3>
-              <p>
-                We retain your personal data only as long as needed to respond to your inquiry and maintain reasonable business records, or until you request deletion, whichever comes first.
-              </p>
-            </section>
+          <section className="space-y-3">
+            <h2 className="type-subheading text-text-primary">3. Direct Communications</h2>
+            <p>
+              If you voluntarily choose to contact us via email (<a href="mailto:hello@jagentslabs.com" className="text-accent underline">hello@jagentslabs.com</a>) or telephone (+91 90633 16737), we will receive your contact details (such as your email address, phone number, and message content). This information is processed exclusively to answer your inquiry and manage standard business correspondence. We do not sell or rent this information to third parties.
+            </p>
+          </section>
 
-            <section>
-              <h3 className="text-foreground mb-3">7. Your rights</h3>
-              <p className="mb-3">Under the DPDP Act, you have the right to:</p>
-              <ul className="list-disc pl-6 space-y-2 mb-4 text-[15px] sm:text-[16px] leading-[1.65] text-foreground/75">
-                <li>Access the personal data we hold about you</li>
-                <li>Correct or update inaccurate or incomplete data</li>
-                <li>Request erasure of your data</li>
-                <li>Withdraw consent at any time</li>
-                <li>File a grievance if you believe your data has been mishandled</li>
-              </ul>
-              <p>
-                To exercise any of these rights, contact us using the details in Section 9. We will respond within a reasonable timeframe as required under applicable law.
-              </p>
-            </section>
+          <section className="space-y-3">
+            <h2 className="type-subheading text-text-primary">4. Hosting Infrastructure & Server Logs</h2>
+            <p>
+              Like virtually all web properties, our hosting and content delivery network provider (Vercel Inc.) automatically processes standard, temporary HTTP request logs when you visit our website. These logs typically include your IP address, browser user-agent, operating system, requested page URL, and access timestamps. These logs are processed solely to ensure network security, defend against distributed denial-of-service (DDoS) attacks, and maintain routing integrity.
+            </p>
+          </section>
 
-            <section>
-              <h3 className="text-foreground mb-3">8. Security</h3>
-              <p>
-                We take reasonable technical and organizational measures to protect your personal data against unauthorized access, loss, or misuse.
-              </p>
-            </section>
+          <section className="space-y-3">
+            <h2 className="type-subheading text-text-primary">5. External Links & Independent Services</h2>
+            <p>
+              This website includes links to our independent software products and sister sites, such as Eschure (<a href="https://eschure.com" target="_blank" rel="noopener noreferrer" className="text-accent underline">eschure.com</a>) and JAgents Studio (<a href="https://jagentsstudio.com" target="_blank" rel="noopener noreferrer" className="text-accent underline">jagentsstudio.com</a>). These independent sites maintain their own distinct terms, subscriptions, and privacy notices. We encourage you to review their specific policies upon visiting.
+            </p>
+          </section>
 
-            <section>
-              <h3 className="text-foreground mb-3">9. Contact and grievance redressal</h3>
-              <p>
-                For any questions about this policy, or to exercise your rights under the DPDP Act, contact us at <a href="mailto:hello@jagentslabs.com" className="text-primary hover:underline">hello@jagentslabs.com</a>.
-              </p>
-            </section>
+          <section className="space-y-3">
+            <h2 className="type-subheading text-text-primary">6. Grievance Officer & Contact</h2>
+            <p>
+              In accordance with applicable data protection laws in India, any questions, notices, or grievances concerning personal data may be addressed to our Grievance Officer:
+            </p>
+            <div className="p-4 rounded-btn bg-surface border border-border text-text-primary type-caption space-y-1">
+              <p><strong className="text-text-primary">Grievance Officer:</strong> [Grievance Officer Name / Designation — To be confirmed by Legal Review]</p>
+              <p><strong className="text-text-primary">Company:</strong> JAgents Labs Private Limited</p>
+              <p><strong className="text-text-primary">Email:</strong> hello@jagentslabs.com</p>
+              <p><strong className="text-text-primary">Address:</strong> H.No. 6-3-1093/406, V V Vintage Boulevard, Somajiguda, Nampally, Hyderabad – 500082, Telangana, India</p>
+            </div>
+          </section>
 
-            <section>
-              <h3 className="text-foreground mb-3">10. Changes to this policy</h3>
-              <p>
-                We may update this policy from time to time. Changes will be posted on this page with a revised "last updated" date.
-              </p>
-            </section>
-          </div>
+          <section className="space-y-3">
+            <h2 className="type-subheading text-text-primary">7. Changes to This Policy</h2>
+            <p>
+              We may revise this privacy policy from time to time. Updates will be published on this page with an updated revision date.
+            </p>
+          </section>
         </div>
       </section>
     </Layout>
   );
-};
-
-export default Privacy;
+}

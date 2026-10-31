@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0B0B0C"/>
+  <rect width="64" height="64" rx="14" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+  <!-- Elegant geometric J -->
+  <path d="M38 18V38C38 43.5228 33.5228 48 28 48C22.4772 48 18 43.5228 18 38H24C24 40.2091 25.7909 42 28 42C30.2091 42 32 40.2091 32 38V18H38Z" fill="#5B8BC4"/>
+</svg>

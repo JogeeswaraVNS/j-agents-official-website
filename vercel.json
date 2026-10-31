@@ -1,8 +1,30 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!api/.*|.*\\..*).*)",
       "destination": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/custom-software",
+      "destination": "https://jagentsstudio.com",
+      "permanent": true
+    },
+    {
+      "source": "/eschure",
+      "destination": "https://eschure.com",
+      "permanent": true
+    },
+    {
+      "source": "/digital-office",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/drish",
+      "destination": "/products",
+      "permanent": true
     }
   ]
 }
