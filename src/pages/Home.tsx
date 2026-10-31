@@ -34,10 +34,10 @@ export default function Home() {
         <div className="w-full px-6 sm:px-8 py-20 sm:py-32">
           <div className={`${glassSection} animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both`}>
             <h1 className="text-[40px] sm:text-[64px] font-semibold leading-[1.1] tracking-[-0.02em] text-white mb-6">
-              AI built for real estate.
+              AI agents and software for real estate.
             </h1>
             <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/90 mb-10 max-w-2xl">
-              JAgents Labs builds AI products and custom software for real estate businesses. Our first product, Eschure, is a live copilot for property brokers.
+              We build AI agents and software that take over repetitive work, remove delays and give real estate teams their time back. It starts with Eschure, a live copilot for property brokers.
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <LinkButton
@@ -142,10 +142,10 @@ export default function Home() {
               JAgents Studio
             </p>
             <h2 className="text-[32px] sm:text-[40px] font-semibold leading-[1.2] tracking-[-0.015em] text-white mb-6">
-              Custom software for real estate businesses.
+              Software and AI agents, built around your business.
             </h2>
             <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/90 mb-10 max-w-2xl">
-              JAgents Studio builds custom software and AI agents for real estate businesses, from the first conversation to a working system.
+              From CRMs to operations software, we build systems that automate repetitive work and connect to the tools your team already uses.
             </p>
             <div>
               <LinkButton
@@ -172,10 +172,10 @@ export default function Home() {
         <div className="w-full px-6 sm:px-8 py-20 sm:py-32">
           <div className={`${glassSection} animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both`}>
             <h2 className="text-[32px] sm:text-[40px] font-semibold leading-[1.2] tracking-[-0.015em] text-white mb-6">
-              Software for how property is sold.
+              Where AI agents meet real estate.
             </h2>
             <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/90 mb-10 max-w-2xl">
-              JAgents Labs builds AI products and custom systems for real estate businesses, starting with the conversation between a broker and a buyer.
+              Real estate runs on calls, listings, WhatsApp and follow-ups. We put AI agents into that work, so less time goes to repetition and delay, and more goes to the person in front of you.
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link
