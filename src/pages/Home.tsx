@@ -1,10 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "../components/layout/Layout";
 import { SEO } from "../components/layout/SEO";
 import { LinkButton } from "../components/ui/Button";
 import { SectionBackground } from "../components/ui/SectionBackground";
 import { ExternalArrow } from "../components/ui/Icons";
+
+/**
+ * MobileImageBand
+ * ---------------
+ * Shown only below the md breakpoint (md:hidden). Renders a 16:9 aspect-ratio
+ * image band with the bright image centre visible (object-cover object-center).
+ * A gradient inside the container fades the bottom edge into #0B0B0C — no hard
+ * line between the image and the text below it.
+ * If the image fails to load, the component returns null so no empty gap is left.
+ */
+interface MobileImageBandProps {
+  src: string;
+  loading?: "eager" | "lazy";
+  decoding?: "async" | "auto" | "sync";
+  fetchPriority?: "high" | "low" | "auto";
+}
+
+function MobileImageBand({
+  src,
+  loading = "lazy",
+  decoding = "async",
+  fetchPriority,
+}: MobileImageBandProps) {
+  const [hidden, setHidden] = useState(false);
+  if (hidden) return null;
+  return (
+    <div
+      className="md:hidden relative w-full overflow-hidden"
+      style={{ aspectRatio: "16/9" }}
+      aria-hidden="true"
+    >
+      <img
+        src={src}
+        alt=""
+        aria-hidden="true"
+        loading={loading}
+        decoding={decoding}
+        {...(fetchPriority ? { fetchPriority } : {})}
+        width={1672}
+        height={941}
+        onError={() => setHidden(true)}
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
+      {/* Bottom fade: image dissolves into #0B0B0C — sits inside overflow:hidden container */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-2/5 pointer-events-none"
+        style={{ background: "linear-gradient(to bottom, transparent, #0B0B0C)" }}
+      />
+    </div>
+  );
+}
 
 export default function Home() {
   const btnScale =
@@ -25,37 +76,21 @@ export default function Home() {
       />
 
       {/* SECTION 1: HERO
-          Mobile: image hidden (plain bg), stacked text, normal padding.
-          Desktop: image right half, solid bg left, content column left.
-          Height: 100svh minus nav (h-16 mobile / h-20 desktop), centred vertically. */}
+          Mobile : MobileImageBand (16:9, bright centre visible) + text on plain #0B0B0C.
+          Desktop: SectionBackground places the image in a right-side 58% box with
+                   continuous left/top/bottom fades. Text sits on the plain left area.
+          Height : 100svh minus nav (4rem mobile / 5rem desktop), content centred. */}
       <section
         className="relative isolate overflow-hidden flex flex-col justify-center
           min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)]"
       >
-        {/* Mobile image band — shown only below md */}
-        <div className="md:hidden w-full h-56 overflow-hidden" aria-hidden="true">
-          <img
-            src="/home/1.webp"
-            alt=""
-            aria-hidden="true"
-            loading="eager"
-            decoding="sync"
-            fetchPriority="high"
-            width={1672}
-            height={941}
-            className="w-full h-full object-cover object-center"
-          />
-          {/* bottom fade: image into page bg */}
-          <div
-            className="absolute left-0 right-0 h-20"
-            style={{
-              top: "calc(14rem - 1px)",
-              background: "linear-gradient(to bottom, transparent, #0B0B0C)",
-            }}
-          />
-        </div>
+        <MobileImageBand
+          src="/home/1.webp"
+          loading="eager"
+          decoding="sync"
+          fetchPriority="high"
+        />
 
-        {/* Desktop background via SectionBackground (image + fades) */}
         <SectionBackground
           src="/home/1.webp"
           loading="eager"
@@ -100,26 +135,7 @@ export default function Home() {
 
       {/* SECTION 2: ESCHURE */}
       <section className="relative isolate overflow-hidden border-t border-white/[0.07]">
-        {/* Mobile image band */}
-        <div className="md:hidden w-full h-48 overflow-hidden" aria-hidden="true">
-          <img
-            src="/home/2.webp"
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
-            decoding="async"
-            width={1672}
-            height={941}
-            className="w-full h-full object-cover object-center"
-          />
-          <div
-            className="absolute left-0 right-0 h-16"
-            style={{
-              top: "calc(48rem - 1px)",
-              background: "linear-gradient(to bottom, transparent, #0B0B0C)",
-            }}
-          />
-        </div>
+        <MobileImageBand src="/home/2.webp" loading="lazy" decoding="async" />
 
         <SectionBackground
           src="/home/2.webp"
@@ -200,26 +216,7 @@ export default function Home() {
 
       {/* SECTION 3: JAGENTS STUDIO */}
       <section className="relative isolate overflow-hidden border-t border-white/[0.07]">
-        {/* Mobile image band */}
-        <div className="md:hidden w-full h-48 overflow-hidden" aria-hidden="true">
-          <img
-            src="/home/3.webp"
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
-            decoding="async"
-            width={1672}
-            height={941}
-            className="w-full h-full object-cover object-center"
-          />
-          <div
-            className="absolute left-0 right-0 h-16"
-            style={{
-              top: "calc(48rem - 1px)",
-              background: "linear-gradient(to bottom, transparent, #0B0B0C)",
-            }}
-          />
-        </div>
+        <MobileImageBand src="/home/3.webp" loading="lazy" decoding="async" />
 
         <SectionBackground
           src="/home/3.webp"
@@ -257,26 +254,7 @@ export default function Home() {
 
       {/* SECTION 4: ONE INDUSTRY */}
       <section className="relative isolate overflow-hidden border-t border-white/[0.07]">
-        {/* Mobile image band */}
-        <div className="md:hidden w-full h-48 overflow-hidden" aria-hidden="true">
-          <img
-            src="/home/4.webp"
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
-            decoding="async"
-            width={1672}
-            height={941}
-            className="w-full h-full object-cover object-center"
-          />
-          <div
-            className="absolute left-0 right-0 h-16"
-            style={{
-              top: "calc(48rem - 1px)",
-              background: "linear-gradient(to bottom, transparent, #0B0B0C)",
-            }}
-          />
-        </div>
+        <MobileImageBand src="/home/4.webp" loading="lazy" decoding="async" />
 
         <SectionBackground
           src="/home/4.webp"
