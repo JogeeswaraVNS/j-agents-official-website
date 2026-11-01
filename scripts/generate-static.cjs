@@ -21,10 +21,10 @@ const pages = [
   },
   {
     route: '/products',
-    title: 'Products — JAgents Labs',
-    description: 'Explore products from JAgents Labs, including Eschure for real estate brokers and JAgents Studio for custom software.',
-    heading: 'Products',
-    content: 'Software built around how you actually work. Products include Eschure (Live AI copilot for real estate property brokers with real-time semantic search over private inventory) and JAgents Studio (custom software and AI agents).'
+    title: 'Products | JAgents Labs',
+    description: 'Eschure is a live AI copilot for property brokers. JAgents Studio builds custom software and AI agents for real estate businesses.',
+    heading: 'Two ways we work with real estate teams.',
+    content: 'Eschure is our product, ready to use today. JAgents Studio builds custom software and AI agents around your business. Products include Eschure (live AI copilot for property brokers) and JAgents Studio (custom software and AI agents for real estate businesses).'
   },
   {
     route: '/approach',

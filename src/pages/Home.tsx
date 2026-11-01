@@ -1,70 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "../components/layout/Layout";
 import { SEO } from "../components/layout/SEO";
 import { LinkButton } from "../components/ui/Button";
 import { SectionBackground } from "../components/ui/SectionBackground";
 import { ExternalArrow } from "../components/ui/Icons";
-import { RevealGroup, RevealItem, RevealImage } from "../components/ui/RevealAnimation";
-
-/**
- * MobileImageBand
- * ---------------
- * Shown only below the md breakpoint (md:hidden). Renders a 16:9 aspect-ratio
- * image band with the bright image centre visible (object-cover object-center).
- * A gradient inside the container fades the bottom edge into #0B0B0C — no hard
- * line between the image and the text below it.
- * If the image fails to load, the component returns null so no empty gap is left.
- */
-interface MobileImageBandProps {
-  src: string;
-  loading?: "eager" | "lazy";
-  decoding?: "async" | "auto" | "sync";
-  fetchPriority?: "high" | "low" | "auto";
-}
-
-function MobileImageBand({
-  src,
-  loading = "lazy",
-  decoding = "async",
-  fetchPriority,
-}: MobileImageBandProps) {
-  const [hidden, setHidden] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
-  if (hidden) return null;
-  return (
-    <RevealImage
-      className="md:hidden"
-      durationMs={1000}
-      isLoaded={loading === "eager" ? isLoaded : true}
-    >
-      <div
-        className="relative w-full overflow-hidden"
-        style={{ aspectRatio: "16/9" }}
-        aria-hidden="true"
-      >
-        <img
-          src={src}
-          alt=""
-          aria-hidden="true"
-          loading={loading}
-          decoding={decoding}
-          {...(fetchPriority ? { fetchPriority } : {})}
-          width={1672}
-          height={941}
-          onLoad={() => setIsLoaded(true)}
-          onError={() => setHidden(true)}
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-        {/* Bottom fade: image dissolves into #0B0B0C — sits inside overflow:hidden container */}
-        <div
-          className="absolute inset-x-0 bottom-0 h-2/5 pointer-events-none"
-          style={{ background: "linear-gradient(to bottom, transparent, #0B0B0C)" }}
-        />
-      </div>
-    </RevealImage>
-  );
-}
 
 export default function Home() {
   const btnScale =
@@ -73,8 +13,8 @@ export default function Home() {
   const linkScale =
     "transition-all duration-300 ease-out hover:scale-105 active:scale-95 will-change-transform inline-block";
 
-  // Content column: constrained width, no panel/box/border/shadow
-  const contentCol = "w-full max-w-[600px] md:max-w-[52%]";
+  // Centered, compact container with clean readable typography across mobile and desktop
+  const contentWrapper = "w-full max-w-2xl mx-auto text-center flex flex-col items-center";
 
   return (
     <Layout>
@@ -84,269 +24,195 @@ export default function Home() {
         canonicalPath="/"
       />
 
-      {/* SECTION 1: HERO
-          Mobile : MobileImageBand (16:9, bright centre visible) + text on plain #0B0B0C.
-          Desktop: SectionBackground places the image in a right-side 58% box with
-                   continuous left/top/bottom fades. Text sits on the plain left area.
-          Height : 100svh minus nav (4rem mobile / 5rem desktop), content centred. */}
-      <section
-        className="relative isolate overflow-hidden flex flex-col justify-center
-          min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)]"
-      >
-        <RevealGroup isHero className="w-full flex flex-col justify-center flex-1">
-          <MobileImageBand
-            src="/home/1.webp"
-            loading="eager"
-            decoding="sync"
-            fetchPriority="high"
-          />
-
-          <SectionBackground
-            src="/home/1.webp"
-            loading="eager"
-            decoding="sync"
-            fetchPriority="high"
-          />
-
-          <div className="w-full px-6 sm:px-8 py-12 sm:py-16 md:py-24">
-            <div className={contentCol}>
-              <RevealItem delay={0} durationMs={700}>
-                <h1
-                  className="text-[40px] sm:text-[56px] md:text-[64px] font-semibold leading-[1.1] tracking-[-0.02em] text-white mb-6"
-                  style={{ textWrap: "balance" } as React.CSSProperties}
-                >
-                  AI agents and software for real estate.
-                </h1>
-              </RevealItem>
-              <RevealItem delay={100} durationMs={700}>
-                <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/90 mb-10 max-w-xl">
-                  We build AI agents and software that take over repetitive work, remove delays and give real estate teams their time back. It starts with Eschure, a live copilot for property brokers.
-                </p>
-              </RevealItem>
-              <RevealItem delay={200} durationMs={700}>
-                <div className="flex flex-wrap items-center gap-6">
-                  <LinkButton
-                    href="https://eschure.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    variant="primary"
-                    className={`text-[16px] min-h-[44px] font-semibold bg-[#5B8BC4] text-[#0B0B0C] hover:bg-[#6F9FD4] ${btnScale}`}
-                  >
-                    Explore Eschure
-                  </LinkButton>
-                  <a
-                    href="https://jagentsstudio.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`group text-[16px] font-normal text-[#A1A1AA] hover:text-white inline-flex items-center gap-1 min-h-[44px] ${linkScale}`}
-                  >
-                    JAgents Studio
-                    <ExternalArrow className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-opacity" />
-                  </a>
-                </div>
-              </RevealItem>
+      {/* SECTION 1: HERO */}
+      <section className="relative isolate overflow-hidden min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)] flex items-center justify-center">
+        <SectionBackground
+          src="/home/1.webp"
+          loading="eager"
+          decoding="sync"
+          fetchPriority="high"
+          className="opacity-30 sm:opacity-35"
+          overlayClassName="bg-gradient-to-b from-[#0B0B0C]/70 via-[#0B0B0C]/40 to-[#0B0B0C]/80"
+        />
+        <div className="w-full px-6 sm:px-8 py-12 sm:py-0">
+          <div className="w-full max-w-5xl mx-auto flex flex-col items-start md:items-center justify-center text-left md:text-center animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both">
+            <h1 className="w-full text-left md:text-center text-[32px] sm:text-[44px] md:text-[50px] lg:text-[56px] font-semibold leading-[1.15] tracking-[-0.02em] text-white mb-5 md:whitespace-nowrap">
+              AI agents and software for real estate.
+            </h1>
+            <p className="w-full text-left md:text-center text-[16px] sm:text-[18px] font-normal leading-[1.6] text-white/85 mb-8 max-w-2xl md:mx-auto">
+              We build AI agents and software that take over repetitive work, remove delays and give real estate teams their time back. It starts with Eschure, a live copilot for property brokers.
+            </p>
+            <div className="w-full flex flex-wrap items-center justify-start md:justify-center gap-4 sm:gap-6">
+              <LinkButton
+                href="https://eschure.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="primary"
+                className={`text-[15px] sm:text-[16px] min-h-[44px] px-6 font-semibold bg-[#5B8BC4] text-[#0B0B0C] hover:bg-[#6F9FD4] ${btnScale}`}
+              >
+                Explore Eschure
+              </LinkButton>
+              <a
+                href="https://jagentsstudio.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group text-[15px] sm:text-[16px] font-normal text-[#A1A1AA] hover:text-white inline-flex items-center gap-1.5 min-h-[44px] px-2 ${linkScale}`}
+              >
+                JAgents Studio
+                <ExternalArrow className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-opacity" />
+              </a>
             </div>
           </div>
-        </RevealGroup>
+        </div>
       </section>
 
       {/* SECTION 2: ESCHURE */}
-      <section className="relative isolate overflow-hidden border-t border-white/[0.07]">
-        <RevealGroup threshold={0.15}>
-          <MobileImageBand src="/home/2.webp" loading="lazy" decoding="async" />
+      <section className="relative isolate overflow-hidden border-t border-white/[0.07] min-h-[80svh] flex items-center justify-center">
+        <SectionBackground
+          src="/home/2.webp"
+          loading="lazy"
+          decoding="async"
+          className="opacity-30 sm:opacity-35"
+          overlayClassName="bg-gradient-to-b from-[#0B0B0C]/70 via-[#0B0B0C]/40 to-[#0B0B0C]/80"
+        />
+        <div className="w-full px-6 sm:px-8 py-16 sm:py-24">
+          <div className="w-full max-w-6xl mx-auto flex flex-col items-start animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both">
+            <p className="text-[13px] sm:text-[14px] font-semibold leading-[1.5] text-[#5B8BC4] uppercase tracking-wider mb-3">
+              Eschure
+            </p>
+            <h2 className="text-[28px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-[1.18] tracking-[-0.015em] text-white mb-4 text-left max-w-4xl">
+              The answer is ready before the buyer finishes the sentence.
+            </h2>
+            <p className="text-[16px] sm:text-[18px] font-normal leading-[1.6] text-white/85 mb-10 text-left max-w-3xl">
+              Eschure is a live copilot for property brokers. During a buyer call, it searches your private inventory by meaning and tells you what fits.
+            </p>
 
-          <SectionBackground
-            src="/home/2.webp"
-            loading="lazy"
-            decoding="async"
-          />
-          <div className="w-full px-6 sm:px-8 py-20 sm:py-32">
-            <div className={contentCol}>
-              <RevealItem staggerMs={80} durationMs={700}>
-                <p className="text-[14px] font-normal leading-[1.5] text-[#A1A1AA] uppercase tracking-wider mb-4">
-                  Eschure
+            {/* Feature Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 w-full mb-8">
+              <div className="bg-[#121214]/60 backdrop-blur-sm border border-white/[0.08] hover:border-white/[0.18] rounded-2xl p-6 sm:p-7 transition-colors">
+                <div className="w-2 h-2 rounded-full bg-[#5B8BC4] mb-4" />
+                <h3 className="text-[18px] sm:text-[20px] font-semibold leading-[1.3] text-white mb-2 text-left">
+                  Honest matches.
+                </h3>
+                <p className="text-[14px] sm:text-[15px] font-normal leading-[1.6] text-white/70 text-left">
+                  Every listing is marked a strong match, a close match or no match. Eschure never forces a bad recommendation.
                 </p>
-              </RevealItem>
-              <RevealItem staggerMs={80} durationMs={700}>
-                <h2
-                  className="text-[32px] sm:text-[40px] font-semibold leading-[1.2] tracking-[-0.015em] text-white mb-6"
-                  style={{ textWrap: "balance" } as React.CSSProperties}
-                >
-                  The answer is ready before the buyer finishes the sentence.
-                </h2>
-              </RevealItem>
-              <RevealItem staggerMs={80} durationMs={700}>
-                <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/90 mb-10 max-w-xl">
-                  Eschure is a live copilot for property brokers. During a buyer call, it searches your private inventory by meaning and tells you what fits.
-                </p>
-              </RevealItem>
-
-              <div className="space-y-6 mb-8 max-w-xl">
-                <RevealItem staggerMs={80} durationMs={700}>
-                  <div>
-                    <h3
-                      className="text-[20px] sm:text-[24px] font-semibold leading-[1.3] tracking-[-0.01em] text-white mb-2"
-                      style={{ textWrap: "balance" } as React.CSSProperties}
-                    >
-                      Honest matches.
-                    </h3>
-                    <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/80">
-                      Every listing is marked a strong match, a close match or no match. Eschure never forces a bad recommendation.
-                    </p>
-                  </div>
-                </RevealItem>
-
-                <RevealItem staggerMs={80} durationMs={700}>
-                  <div>
-                    <h3
-                      className="text-[20px] sm:text-[24px] font-semibold leading-[1.3] tracking-[-0.01em] text-white mb-2"
-                      style={{ textWrap: "balance" } as React.CSSProperties}
-                    >
-                      The whole call in context.
-                    </h3>
-                    <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/80">
-                      It remembers what the buyer said earlier, so every answer fits the full conversation.
-                    </p>
-                  </div>
-                </RevealItem>
-
-                <RevealItem staggerMs={80} durationMs={700}>
-                  <div>
-                    <h3
-                      className="text-[20px] sm:text-[24px] font-semibold leading-[1.3] tracking-[-0.01em] text-white mb-2"
-                      style={{ textWrap: "balance" } as React.CSSProperties}
-                    >
-                      Done when the call ends.
-                    </h3>
-                    <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/80">
-                      Contact details captured, call summary written, WhatsApp and email follow-ups drafted.
-                    </p>
-                  </div>
-                </RevealItem>
               </div>
 
-              <RevealItem staggerMs={80} durationMs={700}>
-                <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/80 mb-8">
-                  Private and off-market inventory stays within your team.
+              <div className="bg-[#121214]/60 backdrop-blur-sm border border-white/[0.08] hover:border-white/[0.18] rounded-2xl p-6 sm:p-7 transition-colors">
+                <div className="w-2 h-2 rounded-full bg-[#5B8BC4] mb-4" />
+                <h3 className="text-[18px] sm:text-[20px] font-semibold leading-[1.3] text-white mb-2 text-left">
+                  The whole call in context.
+                </h3>
+                <p className="text-[14px] sm:text-[15px] font-normal leading-[1.6] text-white/70 text-left">
+                  It remembers what the buyer said earlier, so every answer fits the full conversation.
                 </p>
-              </RevealItem>
+              </div>
 
-              <RevealItem staggerMs={80} durationMs={700}>
-                <div>
-                  <LinkButton
-                    href="https://eschure.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    variant="primary"
-                    className={`text-[16px] min-h-[44px] font-semibold bg-[#5B8BC4] text-[#0B0B0C] hover:bg-[#6F9FD4] ${btnScale}`}
-                  >
-                    Visit Eschure
-                  </LinkButton>
-                </div>
-              </RevealItem>
+              <div className="bg-[#121214]/60 backdrop-blur-sm border border-white/[0.08] hover:border-white/[0.18] rounded-2xl p-6 sm:p-7 transition-colors">
+                <div className="w-2 h-2 rounded-full bg-[#5B8BC4] mb-4" />
+                <h3 className="text-[18px] sm:text-[20px] font-semibold leading-[1.3] text-white mb-2 text-left">
+                  Done when the call ends.
+                </h3>
+                <p className="text-[14px] sm:text-[15px] font-normal leading-[1.6] text-white/70 text-left">
+                  Contact details captured, call summary written, WhatsApp and email follow-ups drafted.
+                </p>
+              </div>
+            </div>
+
+            <p className="text-[14px] sm:text-[15px] font-normal leading-[1.6] text-[#A1A1AA] mb-8 text-left">
+              Private and off-market inventory stays within your team.
+            </p>
+
+            <div>
+              <LinkButton
+                href="https://eschure.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="primary"
+                className={`text-[15px] sm:text-[16px] min-h-[44px] px-6 font-semibold bg-[#5B8BC4] text-[#0B0B0C] hover:bg-[#6F9FD4] ${btnScale}`}
+              >
+                Visit Eschure
+              </LinkButton>
             </div>
           </div>
-        </RevealGroup>
+        </div>
       </section>
 
       {/* SECTION 3: JAGENTS STUDIO */}
-      <section className="relative isolate overflow-hidden border-t border-white/[0.07]">
-        <RevealGroup threshold={0.15}>
-          <MobileImageBand src="/home/3.webp" loading="lazy" decoding="async" />
-
-          <SectionBackground
-            src="/home/3.webp"
-            loading="lazy"
-            decoding="async"
-          />
-          <div className="w-full px-6 sm:px-8 py-20 sm:py-32">
-            <div className={contentCol}>
-              <RevealItem staggerMs={80} durationMs={700}>
-                <p className="text-[14px] font-normal leading-[1.5] text-[#A1A1AA] uppercase tracking-wider mb-4">
-                  JAgents Studio
-                </p>
-              </RevealItem>
-              <RevealItem staggerMs={80} durationMs={700}>
-                <h2
-                  className="text-[32px] sm:text-[40px] font-semibold leading-[1.2] tracking-[-0.015em] text-white mb-6"
-                  style={{ textWrap: "balance" } as React.CSSProperties}
-                >
-                  Software and AI agents, built around your business.
-                </h2>
-              </RevealItem>
-              <RevealItem staggerMs={80} durationMs={700}>
-                <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/90 mb-10 max-w-xl">
-                  From CRMs to operations software, we build systems that automate repetitive work and connect to the tools your team already uses.
-                </p>
-              </RevealItem>
-              <RevealItem staggerMs={80} durationMs={700}>
-                <div>
-                  <LinkButton
-                    href="https://jagentsstudio.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    variant="primary"
-                    className={`text-[16px] min-h-[44px] font-semibold bg-[#5B8BC4] text-[#0B0B0C] hover:bg-[#6F9FD4] ${btnScale}`}
-                  >
-                    Visit JAgents Studio
-                  </LinkButton>
-                </div>
-              </RevealItem>
+      <section className="relative isolate overflow-hidden border-t border-white/[0.07] min-h-[70svh] flex items-center justify-center">
+        <SectionBackground
+          src="/home/3.webp"
+          loading="lazy"
+          decoding="async"
+          className="opacity-30 sm:opacity-35"
+          overlayClassName="bg-gradient-to-b from-[#0B0B0C]/70 via-[#0B0B0C]/40 to-[#0B0B0C]/80"
+        />
+        <div className="w-full px-6 sm:px-8 py-16 sm:py-24">
+          <div className="w-full max-w-6xl mx-auto flex flex-col items-start md:items-end animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both">
+            <p className="text-[13px] sm:text-[14px] font-semibold leading-[1.5] text-[#5B8BC4] uppercase tracking-wider mb-3 text-left md:text-right">
+              JAgents Studio
+            </p>
+            <h2 className="text-[26px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-[1.2] tracking-[-0.015em] text-white mb-4 text-left md:text-right max-w-full">
+              Software and AI agents, built around your business.
+            </h2>
+            <p className="text-[16px] sm:text-[18px] font-normal leading-[1.6] text-white/85 mb-8 text-left md:text-right max-w-2xl">
+              From CRMs to operations software, we build systems that automate repetitive work and connect to the tools your team already uses.
+            </p>
+            <div className="w-full flex justify-start md:justify-end">
+              <LinkButton
+                href="https://jagentsstudio.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="primary"
+                className={`text-[15px] sm:text-[16px] min-h-[44px] px-6 font-semibold bg-[#5B8BC4] text-[#0B0B0C] hover:bg-[#6F9FD4] ${btnScale}`}
+              >
+                Visit JAgents Studio
+              </LinkButton>
             </div>
           </div>
-        </RevealGroup>
+        </div>
       </section>
 
       {/* SECTION 4: ONE INDUSTRY */}
-      <section className="relative isolate overflow-hidden border-t border-white/[0.07]">
-        <RevealGroup threshold={0.15}>
-          <MobileImageBand src="/home/4.webp" loading="lazy" decoding="async" />
-
-          <SectionBackground
-            src="/home/4.webp"
-            loading="lazy"
-            decoding="async"
-          />
-          <div className="w-full px-6 sm:px-8 py-20 sm:py-32">
-            <div className={contentCol}>
-              <RevealItem staggerMs={80} durationMs={700}>
-                <h2
-                  className="text-[32px] sm:text-[40px] font-semibold leading-[1.2] tracking-[-0.015em] text-white mb-6"
-                  style={{ textWrap: "balance" } as React.CSSProperties}
-                >
-                  Where AI agents meet real estate.
-                </h2>
-              </RevealItem>
-              <RevealItem staggerMs={80} durationMs={700}>
-                <p className="text-[17px] sm:text-[18px] font-normal leading-[1.6] text-white/90 mb-10 max-w-xl">
-                  Real estate runs on calls, listings, WhatsApp and follow-ups. We put AI agents into that work, so less time goes to repetition and delay, and more goes to the person in front of you.
-                </p>
-              </RevealItem>
-              <RevealItem staggerMs={80} durationMs={700}>
-                <div className="flex flex-wrap items-center gap-6">
-                  <Link
-                    to="/approach"
-                    className={`text-[16px] font-normal text-white hover:text-[#5B8BC4] underline underline-offset-4 ${linkScale}`}
-                  >
-                    Our approach
-                  </Link>
-                  <Link
-                    to="/about"
-                    className={`text-[16px] font-normal text-white hover:text-[#5B8BC4] underline underline-offset-4 ${linkScale}`}
-                  >
-                    About
-                  </Link>
-                  <Link
-                    to="/contact"
-                    className={`text-[16px] font-normal text-white hover:text-[#5B8BC4] underline underline-offset-4 ${linkScale}`}
-                  >
-                    Contact
-                  </Link>
-                </div>
-              </RevealItem>
+      <section className="relative isolate overflow-hidden border-t border-white/[0.07] min-h-[70svh] flex items-center justify-center">
+        <SectionBackground
+          src="/home/4.webp"
+          loading="lazy"
+          decoding="async"
+          className="opacity-30 sm:opacity-35"
+          overlayClassName="bg-gradient-to-b from-[#0B0B0C]/70 via-[#0B0B0C]/40 to-[#0B0B0C]/80"
+        />
+        <div className="w-full px-6 sm:px-8 py-16 sm:py-24">
+          <div className="w-full max-w-5xl mx-auto flex flex-col items-start md:items-center justify-center text-left md:text-center animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both">
+            <h2 className="w-full text-left md:text-center text-[30px] sm:text-[40px] md:text-[48px] lg:text-[54px] font-semibold leading-[1.18] tracking-[-0.015em] text-white mb-5 max-w-4xl md:whitespace-nowrap">
+              Where AI agents meet real estate.
+            </h2>
+            <p className="w-full text-left md:text-center text-[16px] sm:text-[18px] font-normal leading-[1.6] text-white/85 mb-8 max-w-2xl md:mx-auto">
+              Real estate runs on calls, listings, WhatsApp and follow-ups. We put AI agents into that work, so less time goes to repetition and delay, and more goes to the person in front of you.
+            </p>
+            <div className="w-full flex flex-wrap items-center justify-start md:justify-center gap-6">
+              <Link
+                to="/approach"
+                className={`text-[15px] sm:text-[16px] font-normal text-white hover:text-[#5B8BC4] underline underline-offset-4 ${linkScale}`}
+              >
+                Our approach
+              </Link>
+              <Link
+                to="/about"
+                className={`text-[15px] sm:text-[16px] font-normal text-white hover:text-[#5B8BC4] underline underline-offset-4 ${linkScale}`}
+              >
+                About
+              </Link>
+              <Link
+                to="/contact"
+                className={`text-[15px] sm:text-[16px] font-normal text-white hover:text-[#5B8BC4] underline underline-offset-4 ${linkScale}`}
+              >
+                Contact
+              </Link>
             </div>
           </div>
-        </RevealGroup>
+        </div>
       </section>
     </Layout>
   );
