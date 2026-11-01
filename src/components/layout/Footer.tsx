@@ -92,11 +92,11 @@ export function Footer() {
                 aria-label="Instagram" className="text-text-secondary hover:text-text-primary transition-colors">
                 <SocialInstagram className="w-[18px] h-[18px]" />
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61593238315501" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.facebook.com/profile.php?id=61595878001554" target="_blank" rel="noopener noreferrer"
                 aria-label="Facebook" className="text-text-secondary hover:text-text-primary transition-colors">
                 <SocialFacebook className="w-[18px] h-[18px]" />
               </a>
-              <a href="https://www.youtube.com/channel/UCbe7QVzRM_OL7EBMhYhd1hg" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.youtube.com/@JAgents-Labs" target="_blank" rel="noopener noreferrer"
                 aria-label="YouTube" className="text-text-secondary hover:text-text-primary transition-colors">
                 <SocialYouTube className="w-[18px] h-[18px]" />
               </a>
