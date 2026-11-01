@@ -7,7 +7,6 @@ export function Nav() {
 
   const navLinks = [
     { label: "Products", to: "/products" },
-    { label: "Our approach", to: "/approach" },
     { label: "About", to: "/about" },
     { label: "Contact", to: "/contact" },
   ];

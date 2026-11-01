@@ -8,7 +8,6 @@ const toAbsolute = (p: string) => path.resolve(__dirname, "..", p);
 const routesToPrerender = [
   { url: "/", title: "JAgents Labs", description: "JAgents Labs builds focused, high-leverage software and AI products built alongside how businesses actually operate." },
   { url: "/products", title: "Products | JAgents Labs", description: "Eschure is a live AI copilot for property brokers. JAgents Studio builds custom software and AI agents for real estate businesses." },
-  { url: "/approach", title: "Our Approach — JAgents Labs", description: "How JAgents Labs designs and builds software: diagnosing operational realities before writing a single line of code." },
   { url: "/about", title: "About — JAgents Labs", description: "About JAgents Labs Private Limited, an applied software company based in Hyderabad, India." },
   { url: "/contact", title: "Contact — JAgents Labs", description: "Get in touch with JAgents Labs directly via email or phone." },
   { url: "/privacy", title: "Privacy Policy — JAgents Labs", description: "Privacy policy for JAgents Labs Private Limited and the jagentslabs.com website." },

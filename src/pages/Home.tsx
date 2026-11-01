@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "../components/layout/Layout";
 import { SEO } from "../components/layout/SEO";
@@ -35,8 +35,8 @@ export default function Home() {
           overlayClassName="bg-gradient-to-b from-[#0B0B0C]/70 via-[#0B0B0C]/40 to-[#0B0B0C]/80"
         />
         <div className="w-full px-6 sm:px-8 py-12 sm:py-0">
-          <div className="w-full max-w-5xl mx-auto flex flex-col items-start md:items-center justify-center text-left md:text-center animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both">
-            <h1 className="w-full text-left md:text-center text-[32px] sm:text-[44px] md:text-[50px] lg:text-[56px] font-semibold leading-[1.15] tracking-[-0.02em] text-white mb-5 md:whitespace-nowrap">
+          <div className="w-full max-w-6xl mx-auto flex flex-col items-start md:items-center justify-center text-left md:text-center reveal-on-scroll">
+            <h1 className="w-full text-left md:text-center text-[32px] sm:text-[44px] md:text-[50px] lg:text-[56px] font-semibold leading-[1.15] tracking-[-0.02em] text-white mb-5">
               AI agents and software for real estate.
             </h1>
             <p className="w-full text-left md:text-center text-[16px] sm:text-[18px] font-normal leading-[1.6] text-white/85 mb-8 max-w-2xl md:mx-auto">
@@ -76,7 +76,7 @@ export default function Home() {
           overlayClassName="bg-gradient-to-b from-[#0B0B0C]/70 via-[#0B0B0C]/40 to-[#0B0B0C]/80"
         />
         <div className="w-full px-6 sm:px-8 py-16 sm:py-24">
-          <div className="w-full max-w-6xl mx-auto flex flex-col items-start animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both">
+          <div className="w-full max-w-6xl mx-auto flex flex-col items-start reveal-on-scroll">
             <p className="text-[13px] sm:text-[14px] font-semibold leading-[1.5] text-[#5B8BC4] uppercase tracking-wider mb-3">
               Eschure
             </p>
@@ -89,7 +89,7 @@ export default function Home() {
 
             {/* Feature Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 w-full mb-8">
-              <div className="bg-[#121214]/60 backdrop-blur-sm border border-white/[0.08] hover:border-white/[0.18] rounded-2xl p-6 sm:p-7 transition-colors">
+              <div className="bg-[#121214]/60 backdrop-blur-sm border border-white/[0.08] hover:border-white/[0.18] rounded-2xl p-6 sm:p-7 transition-all duration-300 ease-out hover:scale-110 will-change-transform">
                 <div className="w-2 h-2 rounded-full bg-[#5B8BC4] mb-4" />
                 <h3 className="text-[18px] sm:text-[20px] font-semibold leading-[1.3] text-white mb-2 text-left">
                   Honest matches.
@@ -99,7 +99,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="bg-[#121214]/60 backdrop-blur-sm border border-white/[0.08] hover:border-white/[0.18] rounded-2xl p-6 sm:p-7 transition-colors">
+              <div className="bg-[#121214]/60 backdrop-blur-sm border border-white/[0.08] hover:border-white/[0.18] rounded-2xl p-6 sm:p-7 transition-all duration-300 ease-out hover:scale-110 will-change-transform">
                 <div className="w-2 h-2 rounded-full bg-[#5B8BC4] mb-4" />
                 <h3 className="text-[18px] sm:text-[20px] font-semibold leading-[1.3] text-white mb-2 text-left">
                   The whole call in context.
@@ -109,7 +109,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="bg-[#121214]/60 backdrop-blur-sm border border-white/[0.08] hover:border-white/[0.18] rounded-2xl p-6 sm:p-7 transition-colors">
+              <div className="bg-[#121214]/60 backdrop-blur-sm border border-white/[0.08] hover:border-white/[0.18] rounded-2xl p-6 sm:p-7 transition-all duration-300 ease-out hover:scale-110 will-change-transform">
                 <div className="w-2 h-2 rounded-full bg-[#5B8BC4] mb-4" />
                 <h3 className="text-[18px] sm:text-[20px] font-semibold leading-[1.3] text-white mb-2 text-left">
                   Done when the call ends.
@@ -149,7 +149,7 @@ export default function Home() {
           overlayClassName="bg-gradient-to-b from-[#0B0B0C]/70 via-[#0B0B0C]/40 to-[#0B0B0C]/80"
         />
         <div className="w-full px-6 sm:px-8 py-16 sm:py-24">
-          <div className="w-full max-w-6xl mx-auto flex flex-col items-start md:items-end animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both">
+          <div className="w-full max-w-6xl mx-auto flex flex-col items-start md:items-end reveal-on-scroll">
             <p className="text-[13px] sm:text-[14px] font-semibold leading-[1.5] text-[#5B8BC4] uppercase tracking-wider mb-3 text-left md:text-right">
               JAgents Studio
             </p>
@@ -184,7 +184,7 @@ export default function Home() {
           overlayClassName="bg-gradient-to-b from-[#0B0B0C]/70 via-[#0B0B0C]/40 to-[#0B0B0C]/80"
         />
         <div className="w-full px-6 sm:px-8 py-16 sm:py-24">
-          <div className="w-full max-w-5xl mx-auto flex flex-col items-start md:items-center justify-center text-left md:text-center animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both">
+          <div className="w-full max-w-5xl mx-auto flex flex-col items-start md:items-center justify-center text-left md:text-center reveal-on-scroll">
             <h2 className="w-full text-left md:text-center text-[30px] sm:text-[40px] md:text-[48px] lg:text-[54px] font-semibold leading-[1.18] tracking-[-0.015em] text-white mb-5 max-w-4xl md:whitespace-nowrap">
               Where AI agents meet real estate.
             </h2>
@@ -192,12 +192,6 @@ export default function Home() {
               Real estate runs on calls, listings, WhatsApp and follow-ups. We put AI agents into that work, so less time goes to repetition and delay, and more goes to the person in front of you.
             </p>
             <div className="w-full flex flex-wrap items-center justify-start md:justify-center gap-6">
-              <Link
-                to="/approach"
-                className={`text-[15px] sm:text-[16px] font-normal text-white hover:text-[#5B8BC4] underline underline-offset-4 ${linkScale}`}
-              >
-                Our approach
-              </Link>
               <Link
                 to="/about"
                 className={`text-[15px] sm:text-[16px] font-normal text-white hover:text-[#5B8BC4] underline underline-offset-4 ${linkScale}`}
@@ -217,3 +211,4 @@ export default function Home() {
     </Layout>
   );
 }
+

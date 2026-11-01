@@ -27,13 +27,6 @@ const pages = [
     content: 'Eschure is our product, ready to use today. JAgents Studio builds custom software and AI agents around your business. Products include Eschure (live AI copilot for property brokers) and JAgents Studio (custom software and AI agents for real estate businesses).'
   },
   {
-    route: '/approach',
-    title: 'Our Approach — JAgents Labs',
-    description: 'How JAgents Labs designs and builds software: diagnosing operational realities before writing a single line of code.',
-    heading: 'Our approach',
-    content: 'Diagnose first: We understand how your business runs before we touch a single line of code. Focused over sprawling: We build the smallest thing that creates meaningful leverage. Built alongside you: We work alongside domain operators to solve production friction.'
-  },
-  {
     route: '/about',
     title: 'About — JAgents Labs',
     description: 'About JAgents Labs Private Limited, an applied software company based in Hyderabad, India.',

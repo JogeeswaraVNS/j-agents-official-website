@@ -2,8 +2,8 @@ import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
 
-const inputDir = './public/home';
-const outputDir = './public/home';
+const inputDir = './public/contact';
+const outputDir = './public/contact';
 
 fs.mkdirSync(outputDir, { recursive: true });
 

@@ -4,7 +4,6 @@ const path = require('path');
 const files = [
   'dist/index.html',
   'dist/products/index.html',
-  'dist/approach/index.html',
   'dist/about/index.html',
   'dist/contact/index.html',
   'dist/privacy/index.html',

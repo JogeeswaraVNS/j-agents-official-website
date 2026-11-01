@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Layout } from "../components/layout/Layout";
 import { SEO } from "../components/layout/SEO";
 
@@ -6,20 +6,17 @@ export default function Privacy() {
   return (
     <Layout>
       <SEO
-        title="Privacy Policy — JAgents Labs"
+        title="Privacy Policy â€” JAgents Labs"
         description="Privacy policy for JAgents Labs Private Limited and the jagentslabs.com website."
         canonicalPath="/privacy"
       />
 
       <section className="max-w-content mx-auto px-6 sm:px-12 lg:px-20 py-16 sm:py-24">
-        {/* Draft Notice */}
-        <div className="p-4 mb-8 rounded-card border border-accent/40 bg-accent/10 text-text-primary type-caption">
-          <strong>Draft Notice:</strong> This policy is currently drafted specifically for jagentslabs.com and is pending final legal sign-off prior to production release.
-        </div>
+
 
         <div className="max-w-3xl mb-12">
           <h1 className="type-heading text-text-primary mb-3">Privacy Policy</h1>
-          <p className="type-caption text-text-secondary">Last updated: October 2026</p>
+          <p className="type-caption text-text-secondary">Last updated: November 2026</p>
         </div>
 
         <div className="space-y-12 max-w-3xl border-t border-border pt-10 text-text-secondary type-body">
@@ -29,13 +26,13 @@ export default function Privacy() {
               JAgents Labs Private Limited ("we", "us", or "our") is the data fiduciary responsible for personal data processed through <strong className="text-text-primary">jagentslabs.com</strong>.
             </p>
             <p className="type-caption">
-              Registered Office: H.No. 6-3-1093/406, V V Vintage Boulevard, Somajiguda, Nampally, Hyderabad – 500082, Telangana, India.<br />
-              Email: hello@jagentslabs.com · Phone: +91 90633 16737
+              Registered Office: H.No. 6-3-1093/406, V V Vintage Boulevard, Somajiguda, Nampally, Hyderabad â€“ 500082, Telangana, India.<br />
+              Email: hello@jagentslabs.com Â· Phone: +91 90633 16737
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="type-subheading text-text-primary">2. Informational Scope & Minimal Data Collection</h2>
+            <h2 className="type-subheading text-text-primary">2. Informational Scope &amp; Minimal Data Collection</h2>
             <p>
               This website serves exclusively as an informational showcase for JAgents Labs. We operate under a principle of strict data minimization:
             </p>
@@ -55,29 +52,32 @@ export default function Privacy() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="type-subheading text-text-primary">4. Hosting Infrastructure & Server Logs</h2>
+            <h2 className="type-subheading text-text-primary">4. Hosting Infrastructure &amp; Server Logs</h2>
             <p>
-              Like virtually all web properties, our hosting and content delivery network provider (Vercel Inc.) automatically processes standard, temporary HTTP request logs when you visit our website. These logs typically include your IP address, browser user-agent, operating system, requested page URL, and access timestamps. These logs are processed solely to ensure network security, defend against distributed denial-of-service (DDoS) attacks, and maintain routing integrity.
+              This website is hosted and delivered through <strong className="text-text-primary">Cloudflare, Inc.</strong> (Cloudflare Pages and Cloudflare's global content delivery network). As part of standard network operations, Cloudflare automatically processes certain technical data when you access our website, including your IP address, browser user-agent string, operating system, requested page URL, HTTP referrer, and access timestamps. This processing is carried out by Cloudflare on our behalf solely to deliver website content, maintain performance, defend against distributed denial-of-service (DDoS) attacks, detect malicious traffic, and ensure routing integrity.
+            </p>
+            <p>
+              Cloudflare may also apply its standard security rules (such as bot detection and rate limiting) to requests reaching our origin. IP addresses processed by Cloudflare are handled in accordance with <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" className="text-accent underline">Cloudflare's Privacy Policy</a>. We do not use Cloudflare Analytics or any optional analytics features that would create visitor profiles or behavioural records.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="type-subheading text-text-primary">5. External Links & Independent Services</h2>
+            <h2 className="type-subheading text-text-primary">5. External Links &amp; Independent Services</h2>
             <p>
               This website includes links to our independent software products and sister sites, such as Eschure (<a href="https://eschure.com" target="_blank" rel="noopener noreferrer" className="text-accent underline">eschure.com</a>) and JAgents Studio (<a href="https://jagentsstudio.com" target="_blank" rel="noopener noreferrer" className="text-accent underline">jagentsstudio.com</a>). These independent sites maintain their own distinct terms, subscriptions, and privacy notices. We encourage you to review their specific policies upon visiting.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="type-subheading text-text-primary">6. Grievance Officer & Contact</h2>
+            <h2 className="type-subheading text-text-primary">6. Grievance Officer &amp; Contact</h2>
             <p>
               In accordance with applicable data protection laws in India, any questions, notices, or grievances concerning personal data may be addressed to our Grievance Officer:
             </p>
-            <div className="p-4 rounded-btn bg-surface border border-border text-text-primary type-caption space-y-1">
-              <p><strong className="text-text-primary">Grievance Officer:</strong> [Grievance Officer Name / Designation — To be confirmed by Legal Review]</p>
+            <div className="p-4 rounded-btn bg-surface border border-border text-text-primary type-caption space-y-1 transition-all duration-300 ease-out hover:scale-110 will-change-transform">
+              <p><strong className="text-text-primary">Grievance Officer:</strong> [Grievance Officer Name / Designation â€” To be confirmed by Legal Review]</p>
               <p><strong className="text-text-primary">Company:</strong> JAgents Labs Private Limited</p>
               <p><strong className="text-text-primary">Email:</strong> hello@jagentslabs.com</p>
-              <p><strong className="text-text-primary">Address:</strong> H.No. 6-3-1093/406, V V Vintage Boulevard, Somajiguda, Nampally, Hyderabad – 500082, Telangana, India</p>
+              <p><strong className="text-text-primary">Address:</strong> H.No. 6-3-1093/406, V V Vintage Boulevard, Somajiguda, Nampally, Hyderabad â€“ 500082, Telangana, India</p>
             </div>
           </section>
 
@@ -92,3 +92,4 @@ export default function Privacy() {
     </Layout>
   );
 }
+
