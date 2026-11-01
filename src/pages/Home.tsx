@@ -31,7 +31,7 @@ export default function Home() {
           loading="eager"
           decoding="sync"
           fetchPriority="high"
-          className="opacity-30 sm:opacity-35"
+          className="opacity-50 sm:opacity-50"
           overlayClassName="bg-gradient-to-b from-[#0B0B0C]/70 via-[#0B0B0C]/40 to-[#0B0B0C]/80"
         />
         <div className="w-full px-6 sm:px-8 py-12 sm:py-0">
@@ -72,7 +72,7 @@ export default function Home() {
           src="/home/2.webp"
           loading="lazy"
           decoding="async"
-          className="opacity-30 sm:opacity-35"
+          className="opacity-50 sm:opacity-50"
           overlayClassName="bg-gradient-to-b from-[#0B0B0C]/70 via-[#0B0B0C]/40 to-[#0B0B0C]/80"
         />
         <div className="w-full px-6 sm:px-8 py-16 sm:py-24">
@@ -145,7 +145,7 @@ export default function Home() {
           src="/home/3.webp"
           loading="lazy"
           decoding="async"
-          className="opacity-30 sm:opacity-35"
+          className="opacity-50 sm:opacity-50"
           overlayClassName="bg-gradient-to-b from-[#0B0B0C]/70 via-[#0B0B0C]/40 to-[#0B0B0C]/80"
         />
         <div className="w-full px-6 sm:px-8 py-16 sm:py-24">
@@ -180,7 +180,7 @@ export default function Home() {
           src="/home/4.webp"
           loading="lazy"
           decoding="async"
-          className="opacity-30 sm:opacity-35"
+          className="opacity-50 sm:opacity-50"
           overlayClassName="bg-gradient-to-b from-[#0B0B0C]/70 via-[#0B0B0C]/40 to-[#0B0B0C]/80"
         />
         <div className="w-full px-6 sm:px-8 py-16 sm:py-24">
