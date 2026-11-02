@@ -38,14 +38,30 @@ export default function Terms() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="type-subheading text-text-primary">3. Intellectual Property</h2>
+            <h2 className="type-subheading text-text-primary">3. Contact Form &amp; Voluntary Data Submissions</h2>
+            <p>
+              This website provides a contact form to facilitate business inquiries. By submitting the contact form, you acknowledge and agree to the following:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 type-body">
+              <li>The information you provide (including name, email, phone number, and inquiry details) is submitted voluntarily and is used solely to respond to your inquiry and manage business correspondence.</li>
+              <li>At present, submitted data is held internally by JAgents Labs Private Limited and is not transmitted to third-party marketing platforms or data brokers. This may change in the future; any such changes will be reflected in our updated Privacy Policy.</li>
+              <li>You represent that the information you submit is accurate, truthful, and relates to a genuine business inquiry.</li>
+              <li>Submitting the contact form does not constitute a binding agreement, contract, or commitment on the part of JAgents Labs Private Limited to provide any products or services.</li>
+            </ul>
+            <p>
+              For full details on how we handle personal data, please refer to our <a href="/privacy" className="text-accent underline">Privacy Policy</a>.
+            </p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="type-subheading text-text-primary">4. Intellectual Property</h2>
             <p>
               All trade names, trademarks, visual design, code, logos, and written materials displayed on this website are the intellectual property of JAgents Labs Private Limited or licensed to us. You may not reproduce, duplicate, copy, or redistribute any portion of this site without our prior written permission.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="type-subheading text-text-primary">4. Infrastructure &amp; Third-Party Services</h2>
+            <h2 className="type-subheading text-text-primary">5. Infrastructure &amp; Third-Party Services</h2>
             <p>
               This website is delivered through <strong className="text-text-primary">Cloudflare, Inc.</strong>, whose network and security services (including DDoS protection, bot management, and content delivery) are applied to all traffic reaching this site. By using this website, you acknowledge that your requests are processed through Cloudflare's infrastructure in accordance with <a href="https://www.cloudflare.com/website-terms/" target="_blank" rel="noopener noreferrer" className="text-accent underline">Cloudflare's Terms of Service</a> and <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" className="text-accent underline">Cloudflare's Privacy Policy</a>.
             </p>
@@ -55,28 +71,28 @@ export default function Terms() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="type-subheading text-text-primary">5. External Websites &amp; Third-Party Content</h2>
+            <h2 className="type-subheading text-text-primary">6. External Websites &amp; Third-Party Content</h2>
             <p>
               Our website links to independent platforms and external resources. We do not control, endorse, or assume responsibility for the availability, accuracy, or content of third-party websites.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="type-subheading text-text-primary">6. Disclaimer of Warranties &amp; Limitation of Liability</h2>
+            <h2 className="type-subheading text-text-primary">7. Disclaimer of Warranties &amp; Limitation of Liability</h2>
             <p>
               This website is provided on an "as is" and "as available" basis without warranties of any kind, whether express or implied. To the fullest extent permitted under applicable law, JAgents Labs Private Limited shall not be liable for any direct, indirect, incidental, or consequential damages resulting from your use of or inability to access this website.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="type-subheading text-text-primary">7. Governing Law &amp; Jurisdiction</h2>
+            <h2 className="type-subheading text-text-primary">8. Governing Law &amp; Jurisdiction</h2>
             <p>
               These Terms of Service are governed by and construed in accordance with the laws of the Republic of India. Any disputes arising out of or related to these terms or your use of the website shall be subject to the exclusive jurisdiction of the competent courts in Hyderabad, Telangana, India.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="type-subheading text-text-primary">8. Contact Information</h2>
+            <h2 className="type-subheading text-text-primary">9. Contact Information</h2>
             <p>
               For legal inquiries regarding these Terms, contact us at:
             </p>

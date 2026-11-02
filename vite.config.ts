@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   plugins: [react()],
-  envDir: path.resolve(__dirname, "./chat-widget"),
+  envDir: path.resolve(__dirname, "./"),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
